@@ -1,27 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Auth from '../../utils/auth';
-
-const Navbar = () => {
+// import Auth from '../../utils/auth';
+import 'materialize-css';
+import { Button, Card, Row, Col } from 'react-materialize';
+const Header = () => {
 
     return (
-        <Container>
-            <Wrapper>
-                <Left>
-                    <SearchContainer>
-                        <Input placeholder="Search" />
-                    </SearchContainer>
-                </Left>
-                <Center>
-                    <Logo>PUMP HAUS</Logo>
-                </Center>
-                <Right>
-                    <MenuItem>SIGNUP</MenuItem>
-                    <MenuItem>LOGIN</MenuItem>
-                </Right>
-            </Wrapper>
-        </Container>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <input placeholder="Search" />
+                    </div>
+                </div>
+                <div>
+                    <div>PUMP HAUS</div>
+                </div>
+                <div>
+                    <div>SIGNUP</div>
+                    <div>LOGIN</div>
+                </div>
+            </div>
+        </div>
     );
 };
 
-export default Navbar;
+export default Header;
