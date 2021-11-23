@@ -23,5 +23,6 @@
   "homepage": "https://github.com/Battling-Brewers/Pump-Haus#readme",
   "devDependencies": {
     "concurrently": "^6.4.0"
-  }
+  },
+  "dependencies": {}
 }
