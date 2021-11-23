@@ -1,17 +1,20 @@
 import React from "react";
+import logo from "../images/pumphauslogo.png"
+import "./header.css"
 // import Auth from '../../utils/auth';
 import "materialize-css";
-import { NavItem, Navbar, Icon, Dropdown, Divider } from "react-materialize";
+import { NavItem, Navbar, Icon} from "react-materialize";
 const Header = () => {
   return (
     <Navbar
-  alignLinks="right"
-  brand={<a className="brand-logo" href="#">Logo</a>}
-  id="mobile-nav"
-  menuIcon={<Icon>menu</Icon>}
-  options={{
+    className="deep-orange darken-2 head-bar"
+    alignLinks="right"
+    brand={<a className="brand-logo" href="/"><img className="responsive-img" id="logo" src={logo}/></a>}
+    id="mobile-nav"
+    menuIcon={<Icon>menu</Icon>}
+    options={{
     draggable: true,
-    edge: 'left',
+    edge: 'right',
     inDuration: 250,
     onCloseEnd: null,
     onCloseStart: null,
@@ -22,10 +25,16 @@ const Header = () => {
   }}
 >
   <NavItem href="">
-    Getting started
+    Home
   </NavItem>
-  <NavItem href="components.html">
-    Components
+  <NavItem href="">
+    Products
+  </NavItem>
+  <NavItem href="">
+    Login
+  </NavItem>
+  <NavItem href="">
+    Cart
   </NavItem>
   
 </Navbar>
