@@ -1,0 +1,9 @@
+.head-bar {
+    height: 200px;
+}
+
+
+#logo {
+    max-height: 200px;
+    max-width: auto;
+}
