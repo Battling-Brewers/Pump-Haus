@@ -13,8 +13,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Login from "./pages/Login";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
-import Quiz from "./pages/Quiz";
-import Slider from './components/Slider/index';
+import Quiz from "./components/Quiz";
+import Slider from './components/Slider';
+import ProductList from './components/ProductList';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,23 +41,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+const App = () => {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
             <Header />
-              <Slider/>
-              {/* <Switch>
+              <Switch>
                 <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-                <Route exact path="/" component={Quiz} />
-              </Switch> */}
+              </Switch>
+              {/* <Slider/> */}
+              {/* <ProductList/> */}
             <Bottom />
         </div>
       </Router>

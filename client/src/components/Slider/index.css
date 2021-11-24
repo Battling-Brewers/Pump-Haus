@@ -3,7 +3,7 @@
     height: 100vh;
     display: flex;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .arrow {
@@ -34,6 +34,7 @@
 .wrapper {
     height: 100%;
     display: flex;
+    transition: all 1.5s ease;  
     transform: translateX(0vw);
 }
 
