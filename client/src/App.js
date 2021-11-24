@@ -14,6 +14,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
 import Quiz from "./pages/Quiz";
+import Slider from './components/Slider/index';
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,7 +46,8 @@ function App() {
       <Router>
         <div>
             <Header />
-              <Switch>
+              <Slider/>
+              {/* <Switch>
                 <Route exact path="/" component={Quiz} />
                 <Route exact path="/" component={Quiz} />
                 <Route exact path="/" component={Quiz} />
@@ -53,7 +56,7 @@ function App() {
                 <Route exact path="/" component={Quiz} />
                 <Route exact path="/" component={Quiz} />
                 <Route exact path="/" component={Quiz} />
-              </Switch>
+              </Switch> */}
             <Bottom />
         </div>
       </Router>
