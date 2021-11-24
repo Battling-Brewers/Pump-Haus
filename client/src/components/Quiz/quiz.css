@@ -1,0 +1,20 @@
+* {
+    color: black;
+}
+.quiz-content{
+    margin-top: 5vh;
+    height: 80vh;
+}
+.quiz{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+.answers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
