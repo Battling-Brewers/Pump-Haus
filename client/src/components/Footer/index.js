@@ -1,36 +1,20 @@
-
 import React from "react";
-import { useLocation, useHistory } from 'react-router-dom';
+import { Footer } from 'react-materialize';
 
-function Footer() {
+const Bottom = () => {
   return (
-    <footer className="footer bg-dark fixed-bottom">
-      <div className="text-center">
-        <a href="mailto:pumphaus2021.com">
-          <img
-            src="https://img.icons8.com/ios/50/000000/apple-mail.png"
-            alt="Gmail"
-            className="btn-floating btn-lg"
-          />
+    <Footer className="deep-orange darken-2">
+        <a target="_blank" rel="noreferrer" href="mailto:pumphaus2021.com">
+          <i className="material-icons medium black-text">email</i>
         </a>
-        <a href="https://twitter.com/HausPump?ref_src=twsrc%5Etfw">
-          <img
-            src="https://img.icons8.com/ios/50/000000/twitter--v1.png"
-            alt="Twitter"
-            className="btn-floating btn-lg"
-          />
+        <a target="_blank" rel="noreferrer" href="https://twitter.com/HausPump?ref_src=twsrc%5Etfw">
+        <i className="material-icons medium black-text">verified</i>
         </a>
-        <a href="https://youtu.be/-xZQ0YZ7ls4">
-          <img
-            src="https://img.icons8.com/ios/50/000000/youtube-play--v1.png"
-            alt="YouTube"
-            className="btn-floating btn-lg"
-          />
+        <a target="_blank" rel="noreferrer"  href="https://youtu.be/-xZQ0YZ7ls4">
+        <i className="material-icons medium black-text">smart_display</i>
         </a>
-      </div>
-    </footer>
+    </Footer>
   );
 }
 
-export default Footer;
-
+export default Bottom;
