@@ -16,7 +16,7 @@ const typeDefs = gql`
     prodDescrip: String
     price: Float!
     prodImage: [String]
-    tags: [Tag] @relation
+    tags: [Tag]
   }
 
   type Tag {
