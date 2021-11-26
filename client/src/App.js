@@ -15,6 +15,11 @@ import Header from "./components/Header";
 import Bottom from "./components/Footer";
 import Quiz from "./pages/Quiz";
 import Slider from './components/Slider/index';
+import Header from "./components/Cart/Header"; // shopping cart header
+import Main from "./components/Cart/Main"; // Main section from shopping cart
+import Basket from "./components/Cart/Basket"; // Customer basket from shopping cart
+import data from "./components/Cart/data"; // data for placeholder products
+import { useState } from "react";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -39,6 +44,29 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+function ShoppingCart () {
+  const { products } = data;
+  const [cartItems, setCartItems] = useState([]);
+  const onAdd = (product) => {
+    const exist = cartItems.find(x => x.id === product.id )
+    if(exist) {
+      setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty +1} : x));
+    } else {
+      setCartItems([...cartItems, {...products, qty: 1}])
+    }
+  }
+  return (
+    <div className="ShoppingCart">
+      <Header></Header>
+      <div className="row">
+        <Main onAdd={onAdd} products={products}></Main>
+        <Basket onAdd={onAdd }cartItems={cartItems}></Basket>
+      </div>
+    </div>
+  )
+}
+
 
 function App() {
   return (
