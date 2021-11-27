@@ -13,9 +13,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Login from "./pages/Login";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
+
 import Quiz from "./components/Quiz";
 import Slider from './components/Slider';
 import ProductList from './components/ProductList';
+import Header from "./components/Cart/Header"; // shopping cart header
+import Main from "./components/Cart/Main"; // Main section from shopping cart
+import Basket from "./components/Cart/Basket"; // Customer basket from shopping cart
+import data from "./components/Cart/data"; // data for placeholder products
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -42,6 +48,7 @@ const client = new ApolloClient({
 });
 
 const App = () => {
+
   return (
     <ApolloProvider client={client}>
       <Router>
