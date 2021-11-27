@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from 'react-materialize';
-
+import './footer.css'
 const Bottom = () => {
   return (
     <Footer className="deep-orange darken-2">
