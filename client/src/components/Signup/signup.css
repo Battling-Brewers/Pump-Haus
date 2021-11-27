@@ -1,0 +1,40 @@
+.signupContainer {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.signupWrapper {
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+}
+
+.signupTitle{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.signupAgreement {
+    font-size: 12px;
+    margin: 20px 0px;
+}
+
+.registerBtn {
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}

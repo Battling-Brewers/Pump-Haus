@@ -9,18 +9,17 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // import Home from "./pages/Home";
-// import Signup from "./pages/Signup";
-// import Login from "./pages/Login";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
-
 import Quiz from "./components/Quiz";
-// import Slider from './components/Slider';
-// import ProductList from './components/ProductList';
-// import Header from "./components/Cart/Header"; // shopping cart header
-// import Main from "./components/Cart/Main"; // Main section from shopping cart
-// import Basket from "./components/Cart/Basket"; // Customer basket from shopping cart
-// import data from "./components/Cart/data"; // data for placeholder products
+import Slider from './components/Slider';
+import ProductList from './components/ProductList';
+import Main from "./components/Cart/Main"; // Main section from shopping cart
+import Basket from "./components/Cart/Basket"; // Customer basket from shopping cart
+import data from "./components/Cart/data"; // data for placeholder products
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,13 +50,15 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Quiz} />
-          </Switch>
-          {/* <Slider/> */}
-          {/* <ProductList/> */}
-          <Bottom />
+            <Header />
+              <Switch>
+                {/* <Route exact path="/" component={Quiz} /> */}
+              </Switch>
+              {/* <Slider/> */}
+              {/* <ProductList/> */}
+              {/* <Signup /> */}
+              <Main />
+            <Bottom />
         </div>
       </Router>
     </ApolloProvider>
