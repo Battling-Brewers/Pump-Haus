@@ -1,9 +1,14 @@
 .head-bar {
-    height: 200px;
+    height: 140px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h4{
+    color: white;
 }
 
 
 #logo {
-    max-height: 200px;
-    max-width: auto;
+    position: relative; top: 20px;
 }

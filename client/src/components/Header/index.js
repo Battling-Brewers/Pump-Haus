@@ -1,15 +1,16 @@
 import React from "react";
 import logo from "../images/pumphauslogo.png"
-import "./header.css"
 // import Auth from '../../utils/auth';
 import "materialize-css";
+import "./header.css"
 import { NavItem, Navbar, Icon} from "react-materialize";
+
 const Header = () => {
   return (
     <Navbar
     className="deep-orange darken-2 head-bar"
     alignLinks="right"
-    brand={<a className="brand-logo" href="/"><img className="responsive-img" id="logo" src={logo}/></a>}
+    brand={<a className="brand-logo center" href="/"><img className="responsive-img" id="logo" src={logo}/></a>}
     id="mobile-nav"
     menuIcon={<Icon>menu</Icon>}
     options={{
@@ -25,16 +26,16 @@ const Header = () => {
   }}
 >
   <NavItem href="">
-    Home
+    <h4>Home</h4>
   </NavItem>
   <NavItem href="">
-    Products
+  <h4>Products</h4>
   </NavItem>
   <NavItem href="">
-    Login
+  <h4>Login</h4>
   </NavItem>
   <NavItem href="">
-    Cart
+  <h4>Cart</h4>
   </NavItem>
   
 </Navbar>
