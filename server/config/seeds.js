@@ -65,7 +65,7 @@ db.once("open", async () => {
       quantity: 500,
     },
     {
-      prodName: "GOODNIGHT SWEET PRINCE",
+      prodName: "GOODNIGHT",
       prodDescrip:
         "These melatonin capsules will ensure that you go down for the night and stay down for the night. Clinically proven to assist in a good nights sleep, these capsules are easy to eat and fast acting. 1 Bottle - 45 5mg capsules.",
       image: ["goodnight1.png", "goodnight2.png"],
