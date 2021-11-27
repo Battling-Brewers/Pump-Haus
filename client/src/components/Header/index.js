@@ -12,7 +12,7 @@ const Header = () => {
     alignLinks="right"
     brand={<a className="brand-logo center" href="/"><img className="responsive-img" id="logo" src={logo}/></a>}
     id="mobile-nav"
-    menuIcon={<Icon>menu</Icon>}
+    menuIcon={<Icon id="nav-menu">menu</Icon>}
     options={{
     draggable: true,
     edge: 'right',

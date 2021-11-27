@@ -17,7 +17,7 @@ import Bottom from "./components/Footer";
 import Quiz from "./components/Quiz";
 import Slider from './components/Slider';
 import ProductList from './components/ProductList';
-import Header from "./components/Cart/Header"; // shopping cart header
+// import Header from "./components/Cart/Header"; // shopping cart header
 import Main from "./components/Cart/Main"; // Main section from shopping cart
 import Basket from "./components/Cart/Basket"; // Customer basket from shopping cart
 import data from "./components/Cart/data"; // data for placeholder products
