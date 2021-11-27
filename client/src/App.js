@@ -45,36 +45,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function ShoppingCart () {
-  const { products } = data;
-  const [cartItems, setCartItems] = useState([]);
-  const onAdd = (product) => {
-    const exist = cartItems.find(x => x.id === product.id )
-    if(exist) {
-      setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty + 1} : x));
-    } else {
-      setCartItems([...cartItems, {...products, qty: 1}])
-    }
-  };
-  const onRemove = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-    if(exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== product.id));
-    } else {
-      setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty - 1} : x));
-    }
-  }
-  return (
-    <div className="ShoppingCart">
-      <Header cartItemCount={cartItems.length}></Header>
-      <div className="row">
-        <Main onAdd={onAdd} products={products}></Main>
-        <Basket onAdd={onAdd } onRemove={onRemove} cartItems={cartItems}></Basket>
-      </div>
-    </div>
-  )
-}
-
 
 function App() {
   return (
