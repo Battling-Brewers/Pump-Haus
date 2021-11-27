@@ -10,7 +10,7 @@ const Header = () => {
     <Navbar
     className="deep-orange darken-2 head-bar"
     alignLinks="right"
-    brand={<a className="brand-logo center" href="/"><img className="responsive-img" id="logo" src={logo}/></a>}
+    brand={<a className="brand-logo center" href="/"><img className="responsive-img" id="logo" src={logo} alt="logo"/></a>}
     id="mobile-nav"
     menuIcon={<Icon>menu</Icon>}
     options={{

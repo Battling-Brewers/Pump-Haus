@@ -2,6 +2,8 @@
     height: 140px;
     display: flex;
     justify-content: space-evenly;
+    position: relative;
+    z-index: 2;
 }
 
 h4{
