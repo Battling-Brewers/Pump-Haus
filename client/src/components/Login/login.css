@@ -1,0 +1,42 @@
+.loginContainer {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.loginWrapper {
+    width: 25%;
+    padding: 20px;
+    background-color: white;
+}
+
+.loginTitle{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginBtn {
+    width: 60%;
+    border: none;
+    padding: 15px 20px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.loginLink {
+    margin: 5px 0px;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
