@@ -4,6 +4,7 @@ import logo from "../images/pumphauslogo.png"
 import "materialize-css";
 import "./header.css"
 import { NavItem, Navbar, Icon} from "react-materialize";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -25,16 +26,16 @@ const Header = () => {
     preventScrolling: true
   }}
 >
-  <NavItem href="">
+  <NavItem>
     <h4>Home</h4>
   </NavItem>
-  <NavItem href="">
+  <NavItem>
   <h4>Products</h4>
   </NavItem>
-  <NavItem href="">
-  <h4>Login</h4>
+  <NavItem>
+  <h4><Link to="/login">Login</Link></h4>
   </NavItem>
-  <NavItem href="">
+  <NavItem>
   <h4>Cart</h4>
   </NavItem>
   

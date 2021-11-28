@@ -13,9 +13,11 @@ h4{
 #mobile-nav{
     background-color: #f57c00
 }
-
-#logo {
-    position: relative; top: 20px;
+#logo{
+    height: 150px;
+}
+.brand-logo {
+    position: relative; top: 67px;
 }
 
 @media only screen and (max-width: 992px) {

@@ -32,10 +32,10 @@ const ProductList = () => {
             id: 7,
             img: "https://www.pngall.com/wp-content/uploads/4/Arnold-Schwarzenegger-Bodybuilding-PNG-HD-Image.png",
         },
-        {
-            id: 8,
-            img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-Free-PNG-Image.png",
-        },
+        // {
+        //     id: 8,
+        //     img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-Free-PNG-Image.png",
+        // },
     ];
 
     return (
