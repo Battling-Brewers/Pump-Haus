@@ -9,9 +9,10 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import Quiz from "./pages/Quiz";
 import Shop from "./pages/Shop";
-import Cart from "./components/Cart";
+import CartPage from "./pages/CartPage";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
 import Contact from "./components/Contact"
@@ -49,9 +50,10 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/signup" component={SignupPage} />
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/products" component={Shop} />
-              <Route exact path="/cart" component={Cart} />
+              <Route exact path="/cart" component={CartPage} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
             <Bottom />
