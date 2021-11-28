@@ -1,7 +1,7 @@
 const questions = [
     {
         question: "What is your favorite color",
-        answers: ["no","yes"]
+        answers: ["yes","yes"]
     },
     {
         question: "What is the average air speed velocity of a swallow",

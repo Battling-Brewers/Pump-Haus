@@ -2,6 +2,15 @@
     display: flex;
 }
 
-.s12{
-    display: flex;
+.footer-icon-links {
+    float: left;
+}
+
+.footer-row {
+    width: 100%;
+}
+
+ul {
+    align-items: center;
+    margin: 0 auto;
 }

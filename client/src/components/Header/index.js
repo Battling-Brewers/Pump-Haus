@@ -27,16 +27,22 @@ const Header = () => {
   }}
 >
   <NavItem>
-    <h4>Home</h4>
+  <h4><Link to="/">Home</Link></h4>
   </NavItem>
   <NavItem>
-  <h4>Products</h4>
+  <h4><Link to="/quiz">Quiz</Link></h4>
+  </NavItem>
+  <NavItem>
+  <h4><Link to="/products">Products</Link></h4>
   </NavItem>
   <NavItem>
   <h4><Link to="/login">Login</Link></h4>
   </NavItem>
   <NavItem>
-  <h4>Cart</h4>
+  <h4><Link to="/cart">Cart</Link></h4>
+  </NavItem>
+  <NavItem>
+  <h4><Link to="/contact">Contact</Link></h4>
   </NavItem>
   
 </Navbar>

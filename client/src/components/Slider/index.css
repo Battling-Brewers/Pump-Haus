@@ -57,6 +57,7 @@
 .infoContainer{
     flex: 1;
     padding: 50px;
+    min-width: 300px;
 }
 
 .infoContainer h1 {

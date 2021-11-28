@@ -17,6 +17,7 @@
 .loginTitle{
     font-size: 24px;
     font-weight: 300;
+    align-content: center;
 }
 
 .loginForm {
@@ -40,3 +41,5 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+

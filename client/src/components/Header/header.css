@@ -11,10 +11,16 @@ h4{
 }
 
 #mobile-nav{
-    background-color: #f57c00
+    background-color: #f57c00;
 }
+
+#mobile-nav a {
+    color: white;
+}
+
 #logo{
     height: 150px;
+
 }
 .brand-logo {
     position: relative; top: 67px;
@@ -27,8 +33,5 @@ h4{
     #nav-menu{
         font-size: 5rem;
         position: relative; top: 30px;
-    }
-    #logo{
-        width: 230px
     }
 }

@@ -5,10 +5,38 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
-        } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+        if (slideIndex === 0) {
+             if (direction === "left") {
+                document.getElementById("wrapper").style.transform = "translateX(-300vw)";
+                setSlideIndex(3)
+            } else {
+                document.getElementById("wrapper").style.transform = "translateX(-100vw)";
+                setSlideIndex(1)
+            }
+        } else if (slideIndex === 1) {
+            if (direction === 'left') {
+                document.getElementById("wrapper").style.transform = "translateX(0vw)"
+                setSlideIndex(0)
+            } else {
+                document.getElementById("wrapper").style.transform = "translateX(-200vw)";
+                setSlideIndex(2)
+            }
+        } else if (slideIndex === 2) {
+            if (direction === "left") {
+                document.getElementById("wrapper").style.transform = "translateX(-100vw)";
+                setSlideIndex(1)
+            } else {
+                document.getElementById("wrapper").style.transform = "translateX(-300vw)";
+                setSlideIndex(3)
+            }
+        } else if (slideIndex === 3) {
+            if (direction === "left") {
+                document.getElementById("wrapper").style.transform = "translateX(-200vw)";
+                setSlideIndex(2)
+            } else {
+                document.getElementById("wrapper").style.transform = "translateX(0vw)";
+                setSlideIndex(0)
+            }
         }
     };
 
@@ -17,13 +45,13 @@ const Slider = () => {
             <div className="arrow left" direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined/>
             </div>
-            <div className="wrapper" slideIndex={slideIndex}>
+            <div className="wrapper" id="wrapper" slideIndex={slideIndex}>
                 <div className="slide">
                     <div class="imgContainer">
-                        <img className="image" src="https://m.media-amazon.com/images/I/41+nRKKynBL._AC_.jpg" alt="Pic of Arnold"/>
+                        <img className="image" src="https://cdn.discordapp.com/attachments/905114660771069962/914380976715612210/unknown.png" alt="Pic of Arnold"/>
                     </div>
                     <div className="infoContainer">
-                        <h1>GET TO THE CHOPPA</h1>
+                        <h1>YOU FEELIN THE BURN?</h1>
                         <p>PLS BUY LOTS OF OUR PRODUCTS</p>
                         <button><a href="https://www.youtube.com/watch?v=-xZQ0YZ7ls4">TOUCH ME NOW</a></button>
                     </div>
@@ -40,12 +68,22 @@ const Slider = () => {
                 </div>
                 <div className="slide">
                     <div class="imgContainer">
-                        <img className="image" src="https://m.media-amazon.com/images/I/41+nRKKynBL._AC_.jpg" alt="Pic of Arnold"/>
+                        <img className="image" src="https://cdn.discordapp.com/attachments/905114660771069962/912961939360067594/DA-ANDRES.png" alt="Pic of Andres"/>
                     </div>
                     <div className="infoContainer">
                         <h1>HASTA LA VISTA BABY</h1>
                         <p>DONT YOU KNOW ABOUT THE WORD</p>
                         <button>COME WITH ME</button>
+                    </div>
+                </div>
+                <div className="slide">
+                    <div class="imgContainer">
+                        <img className="image" src="https://cdn.discordapp.com/attachments/905114660771069962/914380803117551636/unknown.png" alt="Pic of Andres"/>
+                    </div>
+                    <div className="infoContainer">
+                        <h1>HEYO DADDY-O</h1>
+                        <p>DONT FORGET TO SUBSCRIBE TO OUR NEWSLETTER</p>
+                        <button>IF YOU WANT TO LIVE</button>
                     </div>
                 </div>
             </div>

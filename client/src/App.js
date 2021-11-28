@@ -11,9 +11,10 @@ import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Quiz from "./pages/Quiz";
 import Shop from "./pages/Shop";
-// import Cart from "./pages/Cart";
+import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
+import Contact from "./components/Contact"
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -50,7 +51,8 @@ const App = () => {
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/products" component={Shop} />
-              {/* <Route exact path="/cart" component={Cart} /> */}
+              <Route exact path="/cart" component={Cart} />
+              <Route exact path="/contact" component={Contact} />
             </Switch>
             <Bottom />
         </div>
