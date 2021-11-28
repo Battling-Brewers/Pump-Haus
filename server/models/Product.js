@@ -16,13 +16,19 @@ const productSchema = new Schema({
   price: {
     type: Number,
     required: true,
-    trim: true,
   },
   prodImages: {
-    type: String,
+    type: [String],
+  },
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 0,
   },
   tags: {
-    type: [String],
+    type: Schema.Types.ObjectId,
+    ref: "Tag",
+    required: true,
   },
 });
 
