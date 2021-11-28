@@ -10,7 +10,28 @@ h4{
     color: white;
 }
 
+#mobile-nav{
+    background-color: #f57c00;
+}
 
-#logo {
-    position: relative; top: 20px;
+#mobile-nav a {
+    color: white;
+}
+
+#logo{
+    height: 150px;
+
+}
+.brand-logo {
+    position: relative; top: 67px;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-wrapper{
+        width: 100%;
+    }
+    #nav-menu{
+        font-size: 5rem;
+        position: relative; top: 30px;
+    }
 }

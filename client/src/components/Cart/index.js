@@ -1,46 +1,30 @@
 import React from "react";
-import Product from "./Product";
+// import { loadStripe } from "@stripe/stripe-js";
+import CartItem from "../CartItem";
+import "./cart.css";
 
-function ShoppingCart () {
-    const { products } = data;
-    const [cartItems, setCartItems] = useState([]);
-    const onAdd = (product) => {
-      const exist = cartItems.find(x => x.id === product.id )
-      if(exist) {
-        setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty + 1} : x));
-      } else {
-        setCartItems([...cartItems, {...products, qty: 1}])
-      }
-    };
-    const onRemove = (product) => {
-      const exist = cartItems.find((x) => x.id === product.id);
-      if(exist.qty === 1) {
-        setCartItems(cartItems.filter((x) => x.id !== product.id));
-      } else {
-        setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty - 1} : x));
-      }
-    }
-    return (
-      <div className="ShoppingCart">
-        <Header cartItemCount={cartItems.length}></Header>
-        <div className="row">
-          <Main onAdd={onAdd} products={products}></Main>
-          <Basket onAdd={onAdd } onRemove={onRemove} cartItems={cartItems}></Basket>
+// const stripePromise = loadStripe('STRIPE_API_KEY_HERE');
+
+const Cart = () => {
+  return (
+    <div>
+      <div className="cartWrapper">
+        <h1>Your Cart</h1>
+      </div>
+      <div className="cartContainer">
+        <div className="infoContainer">
+          {/* {state.cart.map((item) => (<CartItem key={item._id} item={item} />))} */}
+        </div>
+        <div className="summaryContainer">
+          <h1>Order Summary</h1>
+          <div className="summaryItem"></div>
+          <div className="summaryItem"></div>
+          <div className="summaryItem"></div>
+          <div className="summaryItem"></div>
         </div>
       </div>
-    )
-  }
+    </div>
+  );
+};
 
-  export default function Main(props) {
-    const {products , onAdd} = props;
-    return (
-        <main className="block col-2">
-            <h2>Products</h2>
-            <div className="row">
-                {products.map((product) => (
-                    <Product key={product.id} product={product} onAdd={onAdd}></Product>
-                ))}
-            </div>
-        </main>
-    )
-}
+export default Cart;

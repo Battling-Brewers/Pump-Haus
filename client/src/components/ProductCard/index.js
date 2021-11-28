@@ -1,9 +1,8 @@
 import React from "react";
-import { NavItem } from "react-materialize";
-import './index.css';
+import './productcard.css';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 
-const productCard = ({ item }) => {
+const ProductCard = ({ item }) => {
     return (
         <div className="card-container">
             <div className="circle"></div>
@@ -17,4 +16,4 @@ const productCard = ({ item }) => {
     )
 }
 
-export default productCard;
+export default ProductCard;

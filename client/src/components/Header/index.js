@@ -4,6 +4,7 @@ import logo from "../images/pumphauslogo.png"
 import "materialize-css";
 import "./header.css"
 import { NavItem, Navbar, Icon} from "react-materialize";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
     alignLinks="right"
     brand={<a className="brand-logo center" href="/"><img className="responsive-img" id="logo" src={logo} alt="logo"/></a>}
     id="mobile-nav"
-    menuIcon={<Icon>menu</Icon>}
+    menuIcon={<Icon id="nav-menu">menu</Icon>}
     options={{
     draggable: true,
     edge: 'right',
@@ -25,17 +26,23 @@ const Header = () => {
     preventScrolling: true
   }}
 >
-  <NavItem href="">
-    <h4>Home</h4>
+  <NavItem>
+  <h4><Link to="/">Home</Link></h4>
   </NavItem>
-  <NavItem href="">
-  <h4>Products</h4>
+  <NavItem>
+  <h4><Link to="/quiz">Quiz</Link></h4>
   </NavItem>
-  <NavItem href="">
-  <h4>Login</h4>
+  <NavItem>
+  <h4><Link to="/products">Products</Link></h4>
   </NavItem>
-  <NavItem href="">
-  <h4>Cart</h4>
+  <NavItem>
+  <h4><Link to="/login">Login</Link></h4>
+  </NavItem>
+  <NavItem>
+  <h4><Link to="/cart">Cart</Link></h4>
+  </NavItem>
+  <NavItem>
+  <h4><Link to="/contact">Contact</Link></h4>
   </NavItem>
   
 </Navbar>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from '../ProductCard/index';
-import './index.css';
+import './productlist.css';
 
 const ProductList = () => {
     const popularProducts = [
