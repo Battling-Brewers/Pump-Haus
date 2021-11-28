@@ -1,7 +1,9 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Order } = require("../models");
 const { signToken } = require("../utils/auth");
-//const stripe = require('stripe')('INSERT_STRIPE_API_HERE);
+const stripe = require("stripe")(
+  "pk_test_51K0E5yDoq6v40HHVr65YQEu1jpTTAF5F2akPEla7CdYt6boI09ZhRjcUE4Wv6ynqdFNB2UC0ewWKdbCtOaG0n13l00j3JLwC02"
+);
 
 const resolvers = {
   Query: {
@@ -126,7 +128,7 @@ const resolvers = {
 
         return order;
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -160,7 +162,7 @@ const resolvers = {
           tags,
         });
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
     updateProduct: async (
       parent,
@@ -168,13 +170,20 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        return await Product.findOneAndUpdate({ _id }, { prodName, prodDescrip, price, prodImage, quantity, tags })
+        return await Product.findOneAndUpdate(
+          { _id },
+          { prodName, prodDescrip, price, prodImage, quantity, tags }
+        );
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
-    decProduct: async (parent, { _id, quantity}) => {
+    decProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+      return await Product.findByIdAndUpdate(
+        _id,
+        { $inc: { quantity: decrement } },
+        { new: true }
+      );
     },
     delProduct: async (parent, { _id }) => {
       const productToDelete = await Product.findOneAndDelete({ _id });
