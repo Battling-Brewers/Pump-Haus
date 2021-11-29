@@ -9,13 +9,13 @@ const Contact = () => {
   const [emailState, setEmailState] = useState("");
   const [messageState, setMessageState] = useState("");
   const onNameChange = (e) => {
-    setNameState({ name: e.target.value });
+    setNameState(e.target.value);
   };
   const onEmailChange = (e) => {
-    setEmailState({ email: e.target.value });
+    setEmailState(e.target.value);
   };
   const onMessageChange = (e) => {
-    setMessageState({ message: e.target.value });
+    setMessageState(e.target.value);
   };
   const submitEmailForm = (e) => {
     e.preventDefault();
@@ -23,21 +23,31 @@ const Contact = () => {
       name: nameState,
       email: emailState,
       message: messageState,
-    }).then((response) => {
-      if (response.data.status === "success") {
-        alert("Message Sent.");
-        this.resetForm();
-      } else if (response.data.status === "fail") {
-        alert("Message failed to send.");
-        console.log(response.data.error)
-      }
-    });
-    resetForm();
-  };
-  const resetForm = () => {
+    })
     setNameState("");
     setEmailState("");
     setMessageState("");
+    console.log(nameState, emailState, messageState)
+    // window.location.reload()
+    // .then(() => {
+
+    // })
+    // .then((response) => {
+    //   if (response.data.status === "success") {
+    //     alert("Message Sent.");
+    //     // resetForm();
+    //   } else if (response.data.status === "fail") {
+    //     alert("Message failed to send.");
+    //     console.log(response.data.error)
+    //   }
+    // });
+    // resetForm();
+};
+const resetForm = async () => {
+    await setNameState("");
+    await setEmailState("");
+    await setMessageState("");
+    console.log(nameState, emailState, messageState)
   };
   return (
     <div className="container">
@@ -48,7 +58,7 @@ const Contact = () => {
             <form className="col m8 offset-m2 s12">
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="name" type="text" onChange={onNameChange} />
+                  <input id="name" type="text" onChange={onNameChange} value={nameState}/>
                   <label for="name">Name</label>
                 </div>
                 <div className="input-field col s12">
@@ -57,6 +67,7 @@ const Contact = () => {
                     type="email"
                     className="form-input"
                     onChange={onEmailChange}
+                    value={emailState}
                   />
                   <label for="email">Email</label>
                 </div>
@@ -65,6 +76,7 @@ const Contact = () => {
                     id="message"
                     className="materialize-textarea"
                     onChange={onMessageChange}
+                    value={messageState}
                   ></textarea>
                   <label for="message">Message</label>
                 </div>
