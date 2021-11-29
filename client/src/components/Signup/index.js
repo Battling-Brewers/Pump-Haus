@@ -1,6 +1,6 @@
 import React from 'react'
 import './signup.css';
-
+import { Link } from 'react-router-dom';
 const Signup = () => {
     return (
         <div className="signupContainer">
@@ -17,6 +17,7 @@ const Signup = () => {
                         By creating an account, I consent to the processing of my personal data in accordance with the <b>PRIVACY POLICY</b>.
                     </span>
                     <button className="registerBtn">Register</button>
+                    <Link to="/login">Already a user? Login instead</Link>
                 </form>
             </div>
         </div>
