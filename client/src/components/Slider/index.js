@@ -68,7 +68,7 @@ const Slider = () => {
                 </div>
                 <div className="slide">
                     <div class="imgContainer">
-                        <img className="image" src="https://cdn.discordapp.com/attachments/905114660771069962/912961939360067594/DA-ANDRES.png" alt="Pic of Andres"/>
+                        <img className="image" src="https://cdn.discordapp.com/attachments/914369970371186700/914742612810940416/unknown.png" alt="Pic of Andres"/>
                     </div>
                     <div className="infoContainer">
                         <h1>HASTA LA VISTA BABY</h1>
