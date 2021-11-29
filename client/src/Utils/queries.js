@@ -20,3 +20,21 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_PRODUCTS = gql`
+  {
+    products {
+      _id
+      prodName
+      prodDescrip
+      price
+      quantity
+      prodImages
+      tags {
+        _id
+        tagName
+        tagDescription
+        }
+    }
+  }
+`

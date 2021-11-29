@@ -15,7 +15,7 @@ import Shop from "./pages/Shop";
 import CartPage from "./pages/CartPage";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
-import Contact from "./components/Contact"
+import Contact from "./components/Contact";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,17 +46,17 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <div>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/signup" component={SignupPage} />
-              <Route exact path="/quiz" component={Quiz} />
-              <Route exact path="/products" component={Shop} />
-              <Route exact path="/cart" component={CartPage} />
-              <Route exact path="/contact" component={Contact} />
-            </Switch>
-            <Bottom />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignupPage} />
+            <Route exact path="/quiz" component={Quiz} />
+            <Route exact path="/products" component={Shop} />
+            <Route exact path="/cart" component={CartPage} />
+            <Route exact path="/contact" component={Contact} />
+          </Switch>
+          <Bottom />
         </div>
       </Router>
     </ApolloProvider>
