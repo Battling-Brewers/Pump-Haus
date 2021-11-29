@@ -17,7 +17,7 @@ const productSchema = new Schema({
     type: Number,
     required: true,
   },
-  prodImages: {
+  prodImage: { 
     type: [String],
   },
   quantity: {
@@ -26,7 +26,7 @@ const productSchema = new Schema({
     default: 0,
   },
   tags: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     ref: "Tag",
     required: true,
   },

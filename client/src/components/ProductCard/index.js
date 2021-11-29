@@ -6,8 +6,13 @@ const ProductCard = ({ item }) => {
     return (
         <div className="card-container">
             <div className="circle"></div>
-            <img src={item.img} alt="product item"/>
+            <img src={item.prodImage[0]} alt="product item"/>
             <div className="info">
+                {item.prodName}
+                {item.prodDescrip}
+                {item.price}
+                {item.quantity}
+                {item.tags[0].tagName}
                 <ShoppingCartOutlined className="icon"/>
                 <SearchOutlined className="icon"/>
                 <FavoriteBorderOutlined className="icon"/>
