@@ -5,11 +5,8 @@ const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 const nodemailer = require("nodemailer");
-const sgTransport = require('nodemailer-sendgrid-transport')
-
 const cors = require("cors");
-require("dotenv").config();
-
+// require("dotenv").config()
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -23,11 +20,8 @@ server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use((request, response, next) => {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+
+app.use(cors());
 
 app.use("/images", express.static(path.join(__dirname, "../client/images")));
 
@@ -45,41 +39,35 @@ db.once("open", () => {
   });
 });
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.sendgrid.net",
-  port: 587,
-  secure: false, // upgrade later with STARTTLS
-  auth: {
-    user: "apikey",
-    pass: process.env.SG_API,
-  },
-});
-
-// const options = {
-//   auth: {
-//     api_user: process.env.SG_USER,
-//     api_pass: process.env.SG_PAS
-//   }
-// }
-
-// const transporter = nodemailer.createTransport(sgTransport(options))
-
-transporter.verify(function (error, success) {
-  error ? console.log(error) : console.log("Server is standing by.");
-});
 app.post("/send", (req, res, next) => {
   let name = req.body.name;
   let email = req.body.email;
   let message = req.body.message;
+  console.log(email, name, message);
+  mailFunc(email, name, message);
+});
 
+const mailFunc = (from, to, message) => {
+  // creates the transporter object with necessary data to send out emails
+  const transporter = nodemailer.createTransport({
+    host: "smtp.sendgrid.net",
+    port: 587, //25, 587, 465
+    secure: false, // upgrade later with STARTTLS
+    auth: {
+      user: "apikey",
+      pass: "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",
+    },
+  });
+  // data that is automatically passed through combined with data that the user passes through to send the email
   const mail = {
-    from: "pumphaus@outlook.com",
+    from: "yummisocks@outlook.com",
     to: "pumphaus@outlook.com",
-    subject: `A message from ${name} @ ${email}`,
-    message: `${message}\n${name}\n${email}`
+    subject: `You have a message!!! by ${from}`,
+    text: `${message}\n${to}`,
   };
 
   transporter.sendMail(mail, (err, data) => {
-    err ? res.json({ status: "fail", error: err }) : res.json({ status: "success" });
+    console.log("hello");
+    err ? console.log(err) : console.log("Success");
   });
-});
+};
