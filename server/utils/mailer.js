@@ -1,40 +1,39 @@
-const nodemailer = require('nodemailer');
-const express = require('express')
-const cors = require('cors');
-require("dotenv").config()
+const nodemailer = require("nodemailer");
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
 // function to be called with api route
-const mailFunc = ({ name, email, message }) => {
+const mailFunc = () => {
   // creates the transporter object with necessary data to send out emails
-  const transporter = nodemailer.createTransport({
-    host: "smtp.sendgrid.net",
-    port: 587,
-    secure: false, // upgrade later with STARTTLS
-    auth: {
-      user: "apikey",
-      pass: process.env.MAILER
-    },
-  });
-  transporter.verify(function(error, success) {
-    error ? console.log(error) : console.log('Server is standing by.')
-  })
-  app.post('/send', (req, res, next) => {
-    let name = req.body.name;
-    let email = req.body.email;
-    let message = req.body.message;
+//   const transporter = nodemailer.createTransport({
+//     host: "smtp.sendgrid.net",
+//     port: 587,
+//     secure: false, // upgrade later with STARTTLS
+//     auth: {
+//       user: process.env.SG_USER,
+//       pass: process.env.SG_PAS,
+//     },
+//   });
+//   transporter.verify(function (error, success) {
+//     error ? console.log(error) : console.log("Server is standing by.");
+//   });
+//   app.post("/send", (req, res, next) => {
+//     let name = req.body.name;
+//     let email = req.body.email;
+//     let message = req.body.message;
 
-    const mail = {
-      from: name,
-      to: "pumphaus@outlook.com",
-      subject: `A message from ${name}`,
-      message: message
-    }
+//     const mail = {
+//       from: email,
+//       to: "pumphaus@outlook.com",
+//       subject: `A message from ${name}`,
+//       message: `${message}\n${name}\n${email}`
+//     };
 
-    transporter.sendMail
-
-err? ? res.Jjson*(){ status: 'fail'} : rees.json({ status: 'success'})      
-    {} >= )atad ,rre()  (),liam
-
-  })
+//     transporter.sendMail(mail, (err, data) => {
+//       err ? res.json({ status: "fail" }) : res.json({ status: "success" });
+//     });
+//   });
+};
 // data that is automatically passed through combined with data that the user passes through to send the email
 //     const mailOptions = {
 //         from:"yummisocks@outlook.com",
@@ -52,4 +51,4 @@ err? ? res.Jjson*(){ status: 'fail'} : rees.json({ status: 'success'})
 //       });
 // }
 
-module.exports = mailFunc
+module.exports = mailFunc;

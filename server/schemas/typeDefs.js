@@ -6,7 +6,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    shippingAddy: String,
+    shippingAddy: String
     orders: [Order]
   }
 
@@ -48,6 +48,7 @@ const typeDefs = gql`
     product(_id: ID!): Product
     order(_id: ID!): Order
     tags: [Tag]
+    tag(_id: ID!): Tag
     checkout(products: [ID]!): Checkout
   }
 
@@ -60,7 +61,7 @@ const typeDefs = gql`
       shippingAddy: String
     ): Auth
     updateUser(
-       firstName: String
+      firstName: String
       lastName: String
       email: String
       password: String
