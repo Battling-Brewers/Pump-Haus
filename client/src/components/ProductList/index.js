@@ -4,19 +4,20 @@ import "./productlist.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../Utils/queries";
 
-
 const ProductList = () => {
-    const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const something = data?.products || [];
+  if (!loading) {
+    console.log("HEWWO OUO", something);
+  }
 
-    console.log(data);
-
-    const productsToRender = [];
-
-    if (data) {
-        data.products.map((product) => {
-            productsToRender.push(product)
-        })
-    }
+  const productsToRender = [];
+  if (data) {
+    console.log(something);
+    data.products.map((product) => {
+      productsToRender.push(product);
+    });
+  }
   const popularProducts = [
     {
       id: 1,
@@ -55,7 +56,7 @@ const ProductList = () => {
   return (
     <div className="productContainer">
       {productsToRender.map((item) => (
-        <ProductCard item={item} key={item.id} />
+        <ProductCard item={item} key={item._id} />
       ))}
     </div>
   );

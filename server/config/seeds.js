@@ -41,7 +41,7 @@ db.once("open", async () => {
       prodName: "BROTEIN",
       prodDescrip:
         "This casein based protein will help you build denser and more powerful muscular structures during your daily resting phase. Vanilla Ice - 1.5lbs",
-      prodImages: ["brotein1.png", "brotein2.png"],
+      prodImage: ["brotein1.png", "brotein2.png"],
       tags: [tags[0]._id, tags[1]._id],
       price: 42.99,
       quantity: 500,
@@ -50,7 +50,7 @@ db.once("open", async () => {
       prodName: "MAN BEEF",
       prodDescrip:
         "This extreme mass gainer contains a whopping 1100 calories per serving. Available in peanut butter chocolate and only available in peanut butter chocolate, this will put more mass on your body than anything else, faster than anything else! Chocolate Peanut Butter - 3lbs",
-      prodImages: ["man-beef1.png", "man-beef2.png"],
+      prodImage: ["man-beef1.png", "man-beef2.png"],
       tags: [tags[0]._id, tags[3]._id],
       price: 52.99,
       quantity: 500,
@@ -59,7 +59,7 @@ db.once("open", async () => {
       prodName: "CLEAN AND JERK",
       prodDescrip:
         "This jerk chicken whey isolate is extremely low in calories and comes absolutely loaded with caffeine to unleash the inner beast! Get the cleanest source of energy on the market for those mythical lean gain! UNICORN MEAT JERK CHICKEN - 1.5lbs",
-      prodImages: ["clean1.png", "clean2.png"],
+      prodImage: ["clean1.png", "clean2.png"],
       tags: [tags[0]._id, tags[2]._id],
       price: 64.99,
       quantity: 500,
@@ -68,7 +68,7 @@ db.once("open", async () => {
       prodName: "GOODNIGHT",
       prodDescrip:
         "These melatonin capsules will ensure that you go down for the night and stay down for the night. Clinically proven to assist in a good nights sleep, these capsules are easy to eat and fast acting. 1 Bottle - 45 5mg capsules.",
-      prodImages: ["goodnight1.png", "goodnight2.png"],
+      prodImage: ["goodnight1.png", "goodnight2.png"],
       tags: [tags[1]._id, tags[4]._id],
       price: 64.99,
       quantity: 500,
@@ -77,7 +77,7 @@ db.once("open", async () => {
       prodName: "REBUILD",
       prodDescrip:
         "These highly concentrated branch chain amino acids will assist in the biological processes necessary to produce high density muscle fiber without the undue nutritional burdens. Mythical lean gains, take before and after a workout. Raspberry Sherbert Powder - 8oz",
-      prodImages: ["rebuild1.png", "rebuild2.png"],
+      prodImage: ["rebuild1.png", "rebuild2.png"],
       tags: [tags[1]._id, tags[2]._id],
       price: 64.99,
       quantity: 500,
@@ -86,7 +86,7 @@ db.once("open", async () => {
       prodName: "GO JUICE",
       prodDescrip:
         "Unlock the beast with GO JUICE - drink this before your workout to ramp up the energy to the absolute maximum. This comes with a laundry list of medical professional warnings, but feel free to disregard them and unlock your inner badass. Sewer Water - 15oz Bottle",
-      prodImages: ["gojuice1.png", "gojuice2.png"],
+      prodImage: ["gojuice1.png", "gojuice2.png"],
       tags: [tags[2]._id, tags[3]._id],
       price: 4.99,
       quantity: 500,
@@ -95,7 +95,7 @@ db.once("open", async () => {
       prodName: "BRICK SAUCE",
       prodDescrip:
         "This high calorie bbq sauce will add mass to your body regardless of what you're eating. Eggs? Sauced. Beef? Sauced. Your grandma's peach pie? Sauced, and adding mass to your body over the holidays. BRICK SAUCE Bbq Sauce - 15oz bottle",
-      prodImages: ["brick1.png", "brick2.png"],
+      prodImage: ["brick1.png", "brick2.png"],
       tags: [tags[4]._id, tags[3]._id],
       price: 14.99,
       quantity: 500,
@@ -103,7 +103,7 @@ db.once("open", async () => {
     {
       prodName: "POWDAH SHAKAH",
       prodDescrip: "It's a 16 oz protein shaker, what do you expect?",
-      prodImages: ["shake1.png", "shake2.png"],
+      prodImage: ["shake1.png", "shake2.png"],
       tags: [tags[4]._id, tags[0]._id],
       price: 14.99,
       quantity: 500,

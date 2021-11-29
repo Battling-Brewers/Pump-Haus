@@ -29,7 +29,7 @@ export const QUERY_PRODUCTS = gql`
       prodDescrip
       price
       quantity
-      prodImages
+      prodImage
       tags {
         _id
         tagName

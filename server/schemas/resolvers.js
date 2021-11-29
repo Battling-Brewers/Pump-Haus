@@ -21,7 +21,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in!");
     },
     products: async (parent, args) => {
-      return await Product.find().populate("tags");
+      return await Product.find({}).populate("tags");
     },
     productsByTag: async (parent, { tags }) => {
       return await Product.find({ tags: tags }).populate("tags");
