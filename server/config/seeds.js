@@ -101,11 +101,47 @@ db.once("open", async () => {
       quantity: 500,
     },
     {
-      prodName: "POWDAH SHAKAH",
+      prodName: "POWDA SHAKA",
       prodDescrip: "It's a 16 oz protein shaker, what do you expect?",
       prodImage: ["shake1.png", "shake2.png"],
       tags: [tags[4]._id, tags[0]._id],
       price: 14.99,
+      quantity: 500,
+    },
+    {
+      prodName: "BROBEANS",
+      prodDescrip:
+        "Way better than the coffee that that weird cat poops out, our BROBEANS will energize even the most slovenly and unmotivated. Take no excuses, drink our coffee.",
+      prodImage: ["coffee1.png", "coffee2.png"],
+      tags: [tags[4]._id, tags[2]._id],
+      price: 24.99,
+      quantity: 500,
+    },
+    {
+      prodName: "BAG O' ROCKS",
+      prodDescrip:
+        "Kids love rocks! Get these rocks shipped directly to your home or office for a taste of the free range geographical liberty that only the stones of this great country get to experience. USDA Prime 100% American rocks. Imported from Mexico.",
+      prodImage: ["rocks1.png", "rocks2.png"],
+      tags: [tags[4]._id, tags[2]._id],
+      price: 84.99,
+      quantity: 500,
+    },
+    {
+      prodName: "TAXIDERMY MARLIN",
+      prodDescrip:
+        "It's a big ol' stuffed fish. Looks great on your father in law's wall. You know, if you're looking for a gift, just sayin'.",
+      prodImage: ["marlin1.png", "marlin2.png"],
+      tags: [tags[0]._id, tags[1]._id],
+      price: 14999.99,
+      quantity: 500,
+    },
+    {
+      prodName: "USED TIRE IRON",
+      prodDescrip:
+        "Flat tire? TOUGH! No excuses, jack that ride up and put on the donut with our full range of used Tire Irons",
+      prodImage: ["tire1.png", "tire2.png"],
+      tags: [tags[1]._id, tags[3]._id],
+      price: 34.99,
       quantity: 500,
     },
   ]);
