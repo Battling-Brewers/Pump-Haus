@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import './productcard.css';
+import { ADD_TO_CART } from "../../Utils/actions";
+import { useStoreContext } from "../../Utils/GlobalState";
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 
-const ProductCard = ({ item }) => {
-    
+const ProductCard = (item) => {
+    // const [state, dispatch] = useStoreContext()
+    // const { cart } = state
+    // const addToCart = () => {
+    //       dispatch({
+    //         type: ADD_TO_CART,
+    //         product: { ...item, purchaseQuantity: 1 }
+    //       });
+    // }
     let imgSrc = `/images/${item.prodImage[0]}`
     console.log(imgSrc)
     return (
@@ -17,7 +26,7 @@ const ProductCard = ({ item }) => {
                 {item.price}
                 {item.quantity}
                 {item.tags[0].tagName}
-                <ShoppingCartOutlined className="icon"/>
+                <ShoppingCartOutlined onClick={console.log("poop")} className="icon"/>
                 <SearchOutlined className="icon"/>
                 <FavoriteBorderOutlined className="icon"/>
             </div>
