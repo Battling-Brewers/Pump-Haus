@@ -13,5 +13,7 @@
 }
 
 .tag-btns button {
-    margin: 5px;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgb(23, 199, 199);
 }

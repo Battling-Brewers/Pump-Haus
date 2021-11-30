@@ -2,7 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Order, Product, Tag } = require("../models");
 const { signToken } = require("../utils/auth");
 require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_TEST_KEY);
+const stripe = require("stripe")('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -50,7 +50,7 @@ const resolvers = {
       const order = new Order({ products: args.products });
       const line_items = [];
 
-      const { products } = await order.populate("products").execPopulate();
+      const { products } = await order.populate("products");
 
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
@@ -124,8 +124,10 @@ const resolvers = {
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
         });
+      // const order = new Order({ products });
+      // User.findByIdAndUpdate("61a67817d8a70523946778c6")
 
-        return order;
+      //   return order;
       }
       throw new AuthenticationError("Not logged in");
     },

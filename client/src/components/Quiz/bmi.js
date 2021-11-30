@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Select, Icon, TextInput } from "react-materialize";
+import "./bmi.css"
 const Bmi = () => {
   return (
-    <div>
+    <div className="container">
+      <h1>please fill out this form for BMI</h1>
       <Select
         id="height-select"
         multiple={false}
@@ -67,7 +69,8 @@ const Bmi = () => {
         <option value="83">6'11</option>
         <option value="84">7'</option>
       </Select>
-      <textinput></textinput>
+      <TextInput placeholder="weight(in pounds)" type="string"></TextInput>
+      <TextInput placeholder="" type="string"></TextInput>
     </div>
   );
 };
