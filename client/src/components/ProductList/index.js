@@ -4,9 +4,6 @@ import "./productlist.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS, QUERY_TAGS } from "../../Utils/queries";
 
-const something = () => {
-  console.log("help me im dying")
-}
 
 const ProductList = () => {
   const [tagState, setTag] = useState("all");

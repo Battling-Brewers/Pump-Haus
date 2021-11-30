@@ -5,8 +5,10 @@ import "materialize-css";
 import "./header.css"
 import { NavItem, Navbar, Icon} from "react-materialize";
 import { Link } from "react-router-dom";
+import { useStoreContext } from '../../Utils/GlobalState';
 
 const Header = () => {
+  const [state, dispatch] = useStoreContext();
   return (
     <Navbar
     className="deep-orange darken-2 head-bar"
@@ -39,7 +41,7 @@ const Header = () => {
   <h4><Link to="/login">Login</Link></h4>
   </NavItem>
   <NavItem>
-  <h4><Link to="/cart">Cart</Link></h4>
+  <h4><Link to="/cart">Cart <span className="badge">{state.cart.length}</span></Link></h4>
   </NavItem>
   <NavItem>
   <h4><Link to="/contact">Contact</Link></h4>
