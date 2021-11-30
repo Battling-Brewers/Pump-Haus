@@ -27,11 +27,11 @@ const ProductList = () => {
   }
 
   const tagClickHandler = async (e) => {
-    let buttonValue = e.target.value
-    await setTag(buttonValue)
-    await console.log(tagState)
-    console.log(productsToRender())
-  } 
+    let buttonValue = e.target.value;
+    await setTag(buttonValue);
+    await console.log(tagState);
+    console.log(productsToRender());
+  };
 
   // const productsToRender = tagState === "all" ? productsAll : productsAll.filter((product) => product.tag._id === tagState)
   const productsToRender = () => {
@@ -45,22 +45,20 @@ const ProductList = () => {
         for (let j = 0; j < productsAll[i].tags.length; j++) {
           if (tagState === productsAll[i].tags[j]._id) {
             renderProd.push(productsAll[i]);
-
           }
         }
       }
-      console.log(renderProd)
+      console.log(renderProd);
       return renderProd;
     }
-  }
-
+  };
 
   return (
     <div>
       <div className="tag-btns">
-          <button value="all" onClick={tagClickHandler}>
-            All Products
-          </button>
+        <button value="all" onClick={tagClickHandler}>
+          All Products
+        </button>
         {tagArr.map((tag) => (
           <button value={tag._id} onClick={tagClickHandler}>
             {tag.tagName}

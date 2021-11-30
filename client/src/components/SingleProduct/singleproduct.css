@@ -1,0 +1,25 @@
+.productWrapper {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgContainerProd {
+    flex: 1;
+    max-width: 40vw;
+    position: relative;
+}
+
+.infoContainer {
+    flex: 1;
+    padding: 0px 50px;
+}
+
+.infoContainer p {
+    margin: 20px 0px;
+}
+
+.prodgalleryimage {
+    position: relative;
+    max-width: 100%;
+}

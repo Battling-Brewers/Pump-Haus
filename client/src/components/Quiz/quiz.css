@@ -4,6 +4,7 @@
 .quiz-content{
     margin-top: 5vh;
     height: 80vh;
+    margin-left: 200px;
 }
 .quiz{
     display: flex;
@@ -17,6 +18,12 @@
 .answers{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     position: relative; top: 200px;
+}
+
+.button {
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
 }

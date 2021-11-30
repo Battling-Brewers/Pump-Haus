@@ -23,8 +23,8 @@ const Quiz = () => {
             <h1 className="">{questions[currentQuestion].question}</h1>
             </div>
             <div className="answers">
-            <Button className="pulse" onClick={() => handleAnswerClick(questions[currentQuestion].answers[0])}>{questions[currentQuestion].answers[0]}</Button>
-            <Button className="pulse" onClick={() => handleAnswerClick(questions[currentQuestion].answers[1])}>{questions[currentQuestion].answers[1]}</Button>
+            <Button className="pulse button" onClick={() => handleAnswerClick(questions[currentQuestion].answers[0])}>{questions[currentQuestion].answers[0]}</Button>
+            <Button className="pulse button" onClick={() => handleAnswerClick(questions[currentQuestion].answers[1])}>{questions[currentQuestion].answers[1]}</Button>
             </div>
         </div>
     )

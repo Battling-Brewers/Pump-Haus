@@ -5,15 +5,17 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
+import { useParams, Link } from "react-router-dom";
+import SingleProduct from "../SingleProduct";
 
 const ProductCard = ({ item }) => {
-  let priceFormat = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 2,
-  })
-  let price = priceFormat.format(item.price)
-  
+  let priceFormat = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  });
+  let price = priceFormat.format(item.price);
+
   return (
     <div className="card-container">
       <div className="circle"></div>
@@ -28,11 +30,25 @@ const ProductCard = ({ item }) => {
         alt="product item"
       />
       <div className="info">
-        <h4 className="prod-title">{item.prodName}</h4>
+        <Link
+            to={`/product/${item._id}`}
+            params={{product: item._id}}
+            key={item._id}
+            item={item}
+          >
+          <h4 className="prod-title">{item.prodName}</h4>
+        </Link>
         <h6 className="prod-title">{price}</h6>
         <div className="iconz">
           <ShoppingCartOutlined className="icon" />
-          <SearchOutlined className="icon" />
+          <Link
+            to={`/product/${item._id}`}
+            params={{product: item._id}}
+            key={item._id}
+            item={item}
+          >
+            <SearchOutlined className="icon" />
+          </Link>
           <FavoriteBorderOutlined className="icon" />
         </div>
       </div>
