@@ -40,10 +40,6 @@ const ProductCard = ({ item }) => {
         </Link>
         <h6 className="prod-title">{price}</h6>
         <div className="iconz">
-<<<<<<< HEAD
-          <ShoppingCartOutlined onClick={console.log("kill me now")} className="icon" />
-          <SearchOutlined className="icon" />
-=======
           <ShoppingCartOutlined className="icon" />
           <Link
             to={`/product/${item._id}`}
@@ -53,7 +49,6 @@ const ProductCard = ({ item }) => {
           >
             <SearchOutlined className="icon" />
           </Link>
->>>>>>> 86fb10e980708f5c86484a3bb6aa7744fdef9fbe
           <FavoriteBorderOutlined className="icon" />
         </div>
       </div>
