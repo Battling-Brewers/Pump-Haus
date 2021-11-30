@@ -1,35 +1,53 @@
-import { Add, Remove } from "@mui/icons-material";
+import { Add, ConstructionOutlined, Remove } from "@mui/icons-material";
 import React, {useEffect} from "react";
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../Utils/queries';
 import { useStoreContext } from '../../Utils/GlobalState';
+import { REMOVE_FROM_CART, CLEAR_CART } from "../../Utils/actions";
 import "./cart.css";
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = (product) => {
-  // const [state, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
+  const {cart} = state
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
-
-
-
-  function submitCheckout() {
-    const productIds = [];
-
-    console.log("hello")
-
-    getCheckout();
+useEffect(() => {
+  if (data) {
+    stripePromise.then((res) => {
+      res.redirectToCheckout({ sessionId: data.checkout.session });
+    });
   }
-  const cart = []
+}, [data]);
+
+const removeFromCart = () => {
+    dispatch({
+      type: REMOVE_FROM_CART,
+      product: { ...data?.product, purchaseQuantity: -1 }
+    });
+  
+}
+
+
+
+
+function submitCheckout() {
+  const productIds = [];
+  console.log(cart);
+  state.cart.forEach((item) => {
+    for (let i = 0; i < item.purchaseQuantity; i++) {
+      console.log(item._id);
+      productIds.push(item._id);
+    }
+  });
+  console.log(productIds)
+  getCheckout({
+    variables: { products: productIds },
+  });
+}
+  
   const subtotal = 0;
   const taxAmount = subtotal * 0.08;
   const shippingCost = subtotal > 100 ? 0 : 10;
@@ -54,11 +72,11 @@ const Cart = (product) => {
               <div className="priceDetails">
                 <div className="productAmtContainer">
                   <Add />
-                  <div className="productAmt">{product.quantity}</div>
-                  <Remove />
+                  <div className="productAmt">{product.purchaseQuantity}</div>
+                  <Remove onClick={removeFromCart} />
                 </div>
                 <div className="productPrice">
-                  $ {product.price * product.quantity}
+                  $ {product.price}
                 </div>
               </div>
             </div>
@@ -86,6 +104,7 @@ const Cart = (product) => {
         </div>
       </div>
     </div>
+  
   );
 };
 

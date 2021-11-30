@@ -3,6 +3,7 @@ import "./signup.css";
 import { useMutation } from "@apollo/client";
 import Auth from "../../Utils/auth";
 import { ADD_USER } from "../../Utils/mutations";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -100,6 +101,7 @@ const Signup = () => {
           </span>
           <button className="registerBtn">Register</button>
         </form>
+        <Link to="/login">Login in instead</Link>
       </div>
     </div>
   );

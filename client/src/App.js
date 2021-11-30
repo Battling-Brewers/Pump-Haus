@@ -12,7 +12,13 @@ import Header from "./components/Header";
 import Bottom from "./components/Footer";
 import Contact from "./components/Contact";
 import SingleProduct from "./components/SingleProduct";
+import { StoreProvider } from './Utils/GlobalState';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 // Construct our main GraphQL API endpoint
 // const httpLink = createHttpLink({
 //   uri: "/graphql",
@@ -47,18 +53,24 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/signup" component={SignupPage} />
-            <Route exact path="/quiz" component={Quiz} />
-            <Route exact path="/products" component={Shop} />
-            <Route exact path="/cart" component={CartPage} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/product/:_id" component={SingleProduct} />
-          </Switch>
-          <Bottom />
+          <StoreProvider >
+          <Elements stripe={stripePromise}>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/signup" component={SignupPage} />
+              <Route exact path="/quiz" component={Quiz} />
+              <Route exact path="/products" component={Shop} />
+              
+              <Route exact path="/cart" component={CartPage} />
+             
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/product/:_id" component={SingleProduct} />
+            </Switch>
+            <Bottom />
+            </Elements>
+          </StoreProvider>
         </div>
       </Router>
     </ApolloProvider>
