@@ -36,3 +36,12 @@
 .swig {
     justify-content: center;
 }
+
+.infoContainer button {
+    margin: 30px;
+    border: none;
+    filter: drop-shadow(2px 2px 2px #0000009a);
+    background-color: #e64a19;
+    color: white;
+    font-weight: bolder;
+}
