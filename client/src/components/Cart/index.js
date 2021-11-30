@@ -30,8 +30,13 @@ const removeFromCart = () => {
   
 }
 
-
-
+function calculateTotal() {
+  let sum = 0;
+  state.cart.forEach((item) => {
+    sum += item.price;
+  });
+  return sum.toFixed(2);
+}
 
 function submitCheckout() {
   const productIds = [];
@@ -47,11 +52,10 @@ function submitCheckout() {
     variables: { products: productIds },
   });
 }
-  
-  const subtotal = 0;
-  const taxAmount = subtotal * 0.08;
-  const shippingCost = subtotal > 100 ? 0 : 10;
-  const orderTotal = subtotal + taxAmount + shippingCost;
+
+
+  const shippingCost = calculateTotal() > 100 ? 0 : 10;
+
 
   return (
     <div>
@@ -63,10 +67,9 @@ function submitCheckout() {
             {cart.map((product) => (
             <div className="productContainer">
               <div className="detailContainer">
-                <img src={product.img} alt="products listed by id"/>
+                <img src={`../images/${product.prodImage[0]}`} alt="products listed by id"/>
                 <div className="details">
                   <div className="productName"><b>Product: </b>{product.prodName}</div>
-                  <div className="productId">{product.id}</div>
                 </div>
               </div>
               <div className="priceDetails">
@@ -85,7 +88,7 @@ function submitCheckout() {
           <div className="summaryContainer">
             <h1 className="orderTitle">Your Order</h1>
             <div className="summaryItem">
-              <span>Subtotal: {subtotal}</span>
+              <span>Subtotal: {}</span>
             </div>
             <div className="summaryItem">
               <span>Shipping: </span>
@@ -93,11 +96,11 @@ function submitCheckout() {
             </div>
             <div className="summaryItem">
               <span>Tax: </span>
-              <div>{taxAmount}</div>
+              <div>{}</div>
             </div>
             <div className="summaryItem">
               <span>Total: </span>
-              <div>{orderTotal}</div>
+              <div>{calculateTotal()}</div>
             </div>
             <button onClick={submitCheckout} className="checkoutBtn">CHECKOUT</button>
           </div>

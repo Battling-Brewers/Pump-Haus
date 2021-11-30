@@ -7,14 +7,24 @@ import {
 } from "@mui/icons-material";
 import { useParams, Link } from "react-router-dom";
 import SingleProduct from "../SingleProduct";
+import { ADD_TO_CART } from "../../Utils/actions";
+import { useStoreContext } from "../../Utils/GlobalState";
 
 const ProductCard = ({ item }) => {
+  const [state, dispatch] = useStoreContext();
   let priceFormat = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 2,
   });
   let price = priceFormat.format(item.price);
+
+  const addToCart = () => {
+    dispatch({
+      type: ADD_TO_CART,
+      product: { ...item, purchaseQuantity: 1 },
+    });
+  };
 
   return (
     <div className="card-container">
@@ -40,7 +50,7 @@ const ProductCard = ({ item }) => {
         </Link>
         <h6 className="prod-title">{price}</h6>
         <div className="iconz">
-          <ShoppingCartOutlined className="icon" />
+          <ShoppingCartOutlined onClick={addToCart} className="icon" />
           <Link
             to={`/product/${item._id}`}
             params={{product: item._id}}

@@ -55,7 +55,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>YOU FEELIN THE BURN?</h1>
                         <p>PLS BUY LOTS OF OUR PRODUCTS</p>
-                        <button>TOUCH ME NOW</button>
+                        <button className="sliderButton">TOUCH ME NOW</button>
                     </div>
                 </div>
                 <div className="slide">
@@ -65,7 +65,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>I'LL BE BACK</h1>
                         <p>DON'T MISS OUT ON OUR END OF YEAR SALE</p>
-                        <button>FEEL MY MUSCLES</button>
+                        <button className="sliderButton">FEEL MY MUSCLES</button>
                     </div>
                 </div>
                 <div className="slide">
@@ -75,7 +75,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>HASTA LA VISTA BABY</h1>
                         <p>DONT YOU KNOW ABOUT THE WORD</p>
-                        <button>COME WITH ME</button>
+                        <button className="sliderButton">COME WITH ME</button>
                     </div>
                 </div>
                 <div className="slide">
@@ -85,7 +85,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>HEYO DADDY-O</h1>
                         <p>DON'T FORGET TO SUBSCRIBE TO OUR NEWSLETTER</p>
-                        <button>IF YOU WANT TO LIVE</button>
+                        <button className="sliderButton">IF YOU WANT TO LIVE</button>
                     </div>
                 </div>
             </div>

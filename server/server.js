@@ -83,7 +83,7 @@ app.post('./create-checkout-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `http://localhost:3001/success.html`,
+    success_url: `http://localhost:3001/cart`,
     cancel_url: `http://localhost:3001/cancel.html`,
   });
 

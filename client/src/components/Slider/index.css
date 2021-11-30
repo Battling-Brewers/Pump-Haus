@@ -105,3 +105,9 @@
     width: 250px;
     transition: all .5s ease;
 }
+
+.sliderButton:hover {
+    opacity: 50%;
+    background-color: cyan;
+    transition: all .5s ease 0s;
+}

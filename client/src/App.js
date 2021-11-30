@@ -15,6 +15,7 @@ import SingleProduct from "./components/SingleProduct";
 import { StoreProvider } from './Utils/GlobalState';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import Success from "./components/Success";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -67,6 +68,7 @@ const App = () => {
              
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/product/:_id" component={SingleProduct} />
+              <Route exact path="/success" component={Success} />
             </Switch>
             <Bottom />
             </Elements>
