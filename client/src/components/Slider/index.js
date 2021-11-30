@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './index.css';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
+import { NavItem, Navbar, Icon} from "react-materialize";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
     const [slideindex, setSlideIndex] = useState(0);
@@ -53,7 +55,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>YOU FEELIN THE BURN?</h1>
                         <p>PLS BUY LOTS OF OUR PRODUCTS</p>
-                        <button><a href="https://www.youtube.com/watch?v=-xZQ0YZ7ls4">TOUCH ME NOW</a></button>
+                        <button>TOUCH ME NOW</button>
                     </div>
                 </div>
                 <div className="slide">
@@ -82,7 +84,7 @@ const Slider = () => {
                     </div>
                     <div className="infoContainer">
                         <h1>HEYO DADDY-O</h1>
-                        <p>DONT FORGET TO SUBSCRIBE TO OUR NEWSLETTER</p>
+                        <p>DON'T FORGET TO SUBSCRIBE TO OUR NEWSLETTER</p>
                         <button>IF YOU WANT TO LIVE</button>
                     </div>
                 </div>
