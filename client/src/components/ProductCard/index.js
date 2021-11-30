@@ -13,7 +13,7 @@ const ProductCard = ({ item }) => {
       maximumFractionDigits: 2,
   })
   let price = priceFormat.format(item.price)
-  console.log(price)
+  
   return (
     <div className="card-container">
       <div className="circle"></div>

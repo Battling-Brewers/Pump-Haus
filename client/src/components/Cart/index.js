@@ -1,73 +1,26 @@
 import { Add, Remove } from "@mui/icons-material";
-import React from "react";
-// import { loadStripe } from "@stripe/stripe-js";
+import React, {useEffect} from "react";
+import { loadStripe } from '@stripe/stripe-js';
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_CHECKOUT } from '../../Utils/queries';
+import { useStoreContext } from '../../Utils/GlobalState';
 import "./cart.css";
 
-// const stripePromise = loadStripe('STRIPE_API_KEY_HERE');
+const stripePromise = loadStripe('STRIPE_API_KEY_HERE');
 
-const Cart = () => {
-  const cart = [
-    {
-      id: 1,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-PNG-Download-Image.png",
-    },
-    {
-      id: 2,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-PNG-Image.png",
-    },
-    {
-      id: 3,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/6/Body-Fitness-PNG-Pic.png",
-    },
-    {
-      id: 4,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/6/Fitness-Silhouette-PNG-Image-Background.png",
-    },
-    {
-      id: 5,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/6/Female-Fitness-Transparent-Image.png",
-    },
-    {
-      id: 6,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-    },
-    {
-      id: 7,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngall.com/wp-content/uploads/4/Arnold-Schwarzenegger-Bodybuilding-PNG-HD-Image.png",
-    },
-    {
-      id: 8,
-      prodName: "Daniel",
-      price: 10,
-      quantity: 3,
-      img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-Free-PNG-Image.png",
-    },
-  ];
+const Cart = (product) => {
+
+  const cart = []
+  const subtotal = 0;
+  const taxAmount = subtotal * 0.08;
+  const shippingCost = subtotal > 100 ? 0 : 10;
+  const orderTotal = subtotal + taxAmount + shippingCost;
+
   return (
     <div>
       <div className="cartWrapper">
-        <h1>Your Cart</h1>
+        <h1 className="cartTitle">Your Cart</h1>
+        <h3 className="shippingStatement">Shipping is <span>FREE</span> for all orders over $100!</h3>
         <div className="cartContainer">
           <div className="infoContainer">
             {cart.map((product) => (
@@ -93,24 +46,24 @@ const Cart = () => {
             ))}
           </div>
           <div className="summaryContainer">
-            <h1>Order Summary</h1>
+            <h1 className="orderTitle">Your Order</h1>
             <div className="summaryItem">
-              <span>Subtotal</span>
-              <div className="">*Subtotal Amount*</div>
+              <span>Subtotal: {subtotal}</span>
+          
             </div>
             <div className="summaryItem">
-              <span>Estimated Shipping</span>
-              <div className="">*Fixed amount?</div>
+              <span>Shipping:</span>
+              <div>{shippingCost}</div>
             </div>
             <div className="summaryItem">
-              <span>Discounts? Promos?</span>
-              <div className="">$ -.01</div>
+              <span>Tax: </span>
+              <div className="">{taxAmount}</div>
             </div>
             <div className="summaryItem">
-              <span>Total</span>
-              <div className="">$1,000,000.00 please pay us</div>
+              <span>Total: </span>
+              <div className="">{orderTotal}</div>
             </div>
-            <button className="checkoutBtn">CHECKOUT NOW</button>
+            <button className="checkoutBtn">CHECKOUT</button>
           </div>
         </div>
       </div>
