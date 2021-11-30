@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import "materialize-css";
-import API from "../../utils/api";
+import API from "../../Utils/api";
 import axios from "axios";
 
 const Contact = () => {

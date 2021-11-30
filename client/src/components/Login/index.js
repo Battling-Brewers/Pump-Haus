@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./login.css";
-import { LOGIN } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import { LOGIN } from "../../Utils/mutations";
+import Auth from "../../Utils/auth";
 import { useMutation } from "@apollo/client";
+import {Link} from "react-router-dom"
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -51,9 +52,9 @@ const Login = () => {
           <a className="loginLink" href="https://youtube.com">
             Forgot your password?
           </a>
-          <a className="loginLink" href="https://twitter.com">
+          <Link className="loginLink" to="/signup">
             Register
-          </a>
+          </Link>
           {error ? (
             <div>
               <p className="error-text">
