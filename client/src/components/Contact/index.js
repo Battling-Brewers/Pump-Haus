@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./contact.css";
 import "materialize-css";
 import API from "../../Utils/api";
-import axios from "axios";
 
 const Contact = () => {
   const [nameState, setNameState] = useState("");
@@ -27,28 +26,8 @@ const Contact = () => {
     setNameState("");
     setEmailState("");
     setMessageState("");
-    console.log(nameState, emailState, messageState)
-    // window.location.reload()
-    // .then(() => {
-
-    // })
-    // .then((response) => {
-    //   if (response.data.status === "success") {
-    //     alert("Message Sent.");
-    //     // resetForm();
-    //   } else if (response.data.status === "fail") {
-    //     alert("Message failed to send.");
-    //     console.log(response.data.error)
-    //   }
-    // });
-    // resetForm();
 };
-const resetForm = async () => {
-    await setNameState("");
-    await setEmailState("");
-    await setMessageState("");
-    console.log(nameState, emailState, messageState)
-  };
+
   return (
     <div className="container">
       <div className="row contact-container">

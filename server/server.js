@@ -44,7 +44,6 @@ app.post("/send", (req, res, next) => {
   let name = req.body.name;
   let email = req.body.email;
   let message = req.body.message;
-  console.log(email, name, message);
   mailFunc(email, name, message);
 });
 
@@ -68,7 +67,6 @@ const mailFunc = (from, to, message) => {
   };
 
   transporter.sendMail(mail, (err, data) => {
-    console.log("hello");
     err ? console.log(err) : console.log("Success");
   });
 };
