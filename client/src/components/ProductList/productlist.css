@@ -7,13 +7,23 @@
 
 .tag-btns {
     display: flex;
+    justify-content: space-around;
     max-width: 70%;
     margin: 0 auto;
     margin-top: 95px;
 }
 
 .tag-btns button {
-    margin: 15px;
+    margin: 5px;
     padding: 10px;
-    background-color: rgb(23, 199, 199);
+    border: none;
+    filter: drop-shadow(2px 2px 2px #0000009a);
+    background-color: #e64a19;
+    color: white;
+    font-weight: bolder;
+}
+
+.tag-btns button:focus {
+    background-color: rgb(59, 59, 59);
+    color: white;
 }
