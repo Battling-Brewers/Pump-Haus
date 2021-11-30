@@ -34,7 +34,22 @@ export const QUERY_PRODUCTS = gql`
         _id
         tagName
         tagDescription
-        }
+      }
+    }
+    tags {
+      _id
+      tagName
+      tagDescription
     }
   }
-`
+`;
+
+export const QUERY_TAGS = gql`
+  {
+    tags {
+      _id
+      tagName
+      tagDescription
+    }
+  }
+`;
