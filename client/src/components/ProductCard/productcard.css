@@ -27,6 +27,22 @@ img {
     z-index: 2;
 }
 
+.img1 {
+    display: inline;
+}
+
+.img1:hover {
+    display: none;
+}
+
+.img2 {
+    display: none;
+}
+
+.img2:hover {
+    display: inline;
+}
+
 .info {
     opacity: 0;
     width: 100%;

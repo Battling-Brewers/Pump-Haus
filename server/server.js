@@ -7,7 +7,7 @@ const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-// require("dotenv").config()
+require("dotenv").config()
 
 const PORT = process.env.PORT || 3001;
 const app = express();

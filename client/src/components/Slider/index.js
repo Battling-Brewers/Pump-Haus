@@ -3,9 +3,9 @@ import './index.css';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 
 const Slider = () => {
-    const [slideIndex, setSlideIndex] = useState(0);
+    const [slideindex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-        if (slideIndex === 0) {
+        if (slideindex === 0) {
              if (direction === "left") {
                 document.getElementById("wrapper").style.transform = "translateX(-300vw)";
                 setSlideIndex(3)
@@ -13,7 +13,7 @@ const Slider = () => {
                 document.getElementById("wrapper").style.transform = "translateX(-100vw)";
                 setSlideIndex(1)
             }
-        } else if (slideIndex === 1) {
+        } else if (slideindex === 1) {
             if (direction === 'left') {
                 document.getElementById("wrapper").style.transform = "translateX(0vw)"
                 setSlideIndex(0)
@@ -21,7 +21,7 @@ const Slider = () => {
                 document.getElementById("wrapper").style.transform = "translateX(-200vw)";
                 setSlideIndex(2)
             }
-        } else if (slideIndex === 2) {
+        } else if (slideindex === 2) {
             if (direction === "left") {
                 document.getElementById("wrapper").style.transform = "translateX(-100vw)";
                 setSlideIndex(1)
@@ -29,7 +29,7 @@ const Slider = () => {
                 document.getElementById("wrapper").style.transform = "translateX(-300vw)";
                 setSlideIndex(3)
             }
-        } else if (slideIndex === 3) {
+        } else if (slideindex === 3) {
             if (direction === "left") {
                 document.getElementById("wrapper").style.transform = "translateX(-200vw)";
                 setSlideIndex(2)
@@ -45,7 +45,7 @@ const Slider = () => {
             <div className="arrow left" direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined/>
             </div>
-            <div className="wrapper" id="wrapper" slideIndex={slideIndex}>
+            <div className="wrapper" id="wrapper" slideindex={slideindex}>
                 <div className="slide">
                     <div class="imgContainer">
                         <img className="image" src="https://cdn.discordapp.com/attachments/905114660771069962/914380976715612210/unknown.png" alt="Pic of Arnold"/>

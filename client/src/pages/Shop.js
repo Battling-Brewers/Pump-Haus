@@ -6,7 +6,7 @@ const Shop = () => {
     return(
         <div>
             <ProductList />
-            <ProductCard />
+            {/* <ProductCard /> */}
         </div>
     )
 }
