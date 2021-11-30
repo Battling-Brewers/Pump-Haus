@@ -60,10 +60,12 @@ const SingleProduct = (item) => {
           </Fade>
         </div>
         <div className="infoContainer col s12 m5">
+          <div className="col s12">
           <h1>{prodName}</h1>
           <p>{prodDescrip}</p>
           <span>${price}</span>
-          <button onClick={addToCart}>Add To Cart</button>
+          </div>
+          <button className="prodBtn"onClick={addToCart}>Add To Cart</button>
         </div>
       </div>
     </div>
