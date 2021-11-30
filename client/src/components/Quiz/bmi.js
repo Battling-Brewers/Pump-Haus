@@ -27,7 +27,7 @@ const Bmi = () => {
         value=""
       >
         <option disabled value="">
-          Choose your option
+          How tall are you?
         </option>
         <option value="48">4'</option>
         <option value="49">4'1</option>

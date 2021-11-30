@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 // import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
@@ -16,6 +11,7 @@ import CartPage from "./pages/CartPage";
 import Header from "./components/Header";
 import Bottom from "./components/Footer";
 import Contact from "./components/Contact";
+import SingleProduct from "./components/SingleProduct";
 
 // Construct our main GraphQL API endpoint
 // const httpLink = createHttpLink({
@@ -60,6 +56,7 @@ const App = () => {
             <Route exact path="/products" component={Shop} />
             <Route exact path="/cart" component={CartPage} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/product/:_id" component={SingleProduct} />
           </Switch>
           <Bottom />
         </div>

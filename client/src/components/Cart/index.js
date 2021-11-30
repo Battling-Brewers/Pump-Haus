@@ -6,10 +6,29 @@ import { QUERY_CHECKOUT } from '../../Utils/queries';
 import { useStoreContext } from '../../Utils/GlobalState';
 import "./cart.css";
 
-const stripePromise = loadStripe('STRIPE_API_KEY_HERE');
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = (product) => {
+  // const [state, dispatch] = useStoreContext();
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
+
+
+
+  function submitCheckout() {
+    const productIds = [];
+
+    console.log("hello")
+
+    getCheckout();
+  }
   const cart = []
   const subtotal = 0;
   const taxAmount = subtotal * 0.08;
@@ -49,21 +68,20 @@ const Cart = (product) => {
             <h1 className="orderTitle">Your Order</h1>
             <div className="summaryItem">
               <span>Subtotal: {subtotal}</span>
-          
             </div>
             <div className="summaryItem">
-              <span>Shipping:</span>
+              <span>Shipping: </span>
               <div>{shippingCost}</div>
             </div>
             <div className="summaryItem">
               <span>Tax: </span>
-              <div className="">{taxAmount}</div>
+              <div>{taxAmount}</div>
             </div>
             <div className="summaryItem">
               <span>Total: </span>
-              <div className="">{orderTotal}</div>
+              <div>{orderTotal}</div>
             </div>
-            <button className="checkoutBtn">CHECKOUT</button>
+            <button onClick={submitCheckout} className="checkoutBtn">CHECKOUT</button>
           </div>
         </div>
       </div>
