@@ -47,9 +47,9 @@ const SingleProduct = (item) => {
     <div className="productContainer">
       <div className="productWrapper">
         <div className="imgContainerProd col s12 m5">
-          <Fade>
+          <Fade className ="fade">
             {slideImages.map((slideImage, index) => (
-              <div className="each-fade">
+              <div className="each-fade swig">
                 <img className="responsive-img" src={slideImage.url} />
               </div>
             ))}
@@ -58,7 +58,7 @@ const SingleProduct = (item) => {
         <div className="infoContainer col s12 m5">
           <h1>{prodName}</h1>
           <p>{prodDescrip}</p>
-          <span>{price}</span>
+          <span>${price}</span>
         </div>
       </div>
     </div>

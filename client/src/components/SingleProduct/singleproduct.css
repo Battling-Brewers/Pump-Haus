@@ -2,12 +2,17 @@
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .imgContainerProd {
     flex: 1;
-    max-width: 40vw;
+    max-width: 50vw;
     position: relative;
+    justify-content: center;
+}
+.imgContainerProd img {
+    margin: 0 auto;
 }
 
 .infoContainer {
@@ -22,4 +27,12 @@
 .prodgalleryimage {
     position: relative;
     max-width: 100%;
+}
+
+.fadeBox {
+    max-width: 100%;
+}
+
+.swig {
+    justify-content: center;
 }
