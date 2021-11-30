@@ -21,6 +21,14 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($products: [ID]!) {
+    checkout(products: $products) {
+      session
+    }
+  }
+`;
+
 export const QUERY_PRODUCTS = gql`
   {
     products {
@@ -50,6 +58,24 @@ export const QUERY_TAGS = gql`
       _id
       tagName
       tagDescription
+    }
+  }
+`;
+
+export const QUERY_PRODUCT = gql`
+  query getProduct($product: ID!) {
+    product(_id: $product) {
+      _id
+      prodName
+      prodDescrip
+      price
+      quantity
+      prodImage
+      tags {
+        _id
+        tagName
+        tagDescription
+      }
     }
   }
 `;

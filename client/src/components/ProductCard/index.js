@@ -5,26 +5,17 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
-import { ADD_TO_CART } from "../../Utils/actions";
-import { useStoreContext } from "../../Utils/GlobalState";
-
+import { useParams, Link } from "react-router-dom";
+import SingleProduct from "../SingleProduct";
 
 const ProductCard = ({ item }) => {
-    // const [state, dispatch] = useStoreContext()
-    // const { cart } = state
-    // const addToCart = () => {
-    //       dispatch({
-    //         type: ADD_TO_CART,
-    //         product: { ...item, purchaseQuantity: 1 }
-    //       });
-    // }
-  let priceFormat = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 2,
-  })
-  let price = priceFormat.format(item.price)
-  console.log(price)
+  let priceFormat = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  });
+  let price = priceFormat.format(item.price);
+
   return (
     <div className="card-container">
       <div className="circle"></div>
@@ -39,11 +30,30 @@ const ProductCard = ({ item }) => {
         alt="product item"
       />
       <div className="info">
-        <h4 className="prod-title">{item.prodName}</h4>
+        <Link
+            to={`/product/${item._id}`}
+            params={{product: item._id}}
+            key={item._id}
+            item={item}
+          >
+          <h4 className="prod-title">{item.prodName}</h4>
+        </Link>
         <h6 className="prod-title">{price}</h6>
         <div className="iconz">
+<<<<<<< HEAD
           <ShoppingCartOutlined onClick={console.log("kill me now")} className="icon" />
           <SearchOutlined className="icon" />
+=======
+          <ShoppingCartOutlined className="icon" />
+          <Link
+            to={`/product/${item._id}`}
+            params={{product: item._id}}
+            key={item._id}
+            item={item}
+          >
+            <SearchOutlined className="icon" />
+          </Link>
+>>>>>>> 86fb10e980708f5c86484a3bb6aa7744fdef9fbe
           <FavoriteBorderOutlined className="icon" />
         </div>
       </div>

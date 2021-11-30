@@ -5,6 +5,7 @@
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .card-container {
     flex: 1;
     margin: 5px;
@@ -83,3 +84,15 @@ img {
     transform: scale(1.1);
 
 }
+=======
+.tag-btns {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 95px;
+}
+
+.tag-btns button {
+    margin: 5px;
+}
+>>>>>>> 86fb10e980708f5c86484a3bb6aa7744fdef9fbe
