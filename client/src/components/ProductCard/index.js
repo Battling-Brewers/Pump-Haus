@@ -5,11 +5,8 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
-import React, {useState} from "react";
-import './productcard.css';
 import { ADD_TO_CART } from "../../Utils/actions";
 import { useStoreContext } from "../../Utils/GlobalState";
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 
 
 const ProductCard = ({ item }) => {
