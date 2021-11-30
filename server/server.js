@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const { ApolloServer } = require("apollo-server-express");
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
@@ -71,3 +72,20 @@ const mailFunc = (from, to, message) => {
     err ? console.log(err) : console.log("Success");
   });
 };
+
+app.post('./create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
+        price: '{{PRICE_ID}}',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `http://localhost:3001/success.html`,
+    cancel_url: `http://localhost:3001/cancel.html`,
+  });
+
+  res.redirect(303, session.url);
+});

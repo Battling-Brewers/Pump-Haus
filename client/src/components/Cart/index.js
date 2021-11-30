@@ -1,12 +1,12 @@
 import { Add, Remove } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 // import { loadStripe } from "@stripe/stripe-js";
 import "./cart.css";
 
 // const stripePromise = loadStripe('STRIPE_API_KEY_HERE');
 
 const Cart = () => {
-  const cart = [
+  const [products, setProducts] = useState([
     {
       id: 1,
       prodName: "Daniel",
@@ -62,59 +62,71 @@ const Cart = () => {
       price: 10,
       quantity: 3,
       img: "https://www.pngarts.com/files/2/Arnold-Schwarzenegger-Free-PNG-Image.png",
-    },
-  ];
+    }
+  ]);
   return (
-    <div>
-      <div className="cartWrapper">
-        <h1>Your Cart</h1>
-        <div className="cartContainer">
-          <div className="infoContainer">
-            {cart.map((product) => (
-            <div className="productContainer">
-              <div className="detailContainer">
-                <img src={product.img} alt="products listed by id"/>
-                <div className="details">
-                  <div className="productName"><b>Product: </b>{product.prodName}</div>
-                  <div className="productId">{product.id}</div>
-                </div>
-              </div>
-              <div className="priceDetails">
-                <div className="productAmtContainer">
-                  <Add />
-                  <div className="productAmt">{product.quantity}</div>
-                  <Remove />
-                </div>
-                <div className="productPrice">
-                  $ {product.price * product.quantity}
-                </div>
-              </div>
-            </div>
-            ))}
-          </div>
-          <div className="summaryContainer">
-            <h1>Order Summary</h1>
-            <div className="summaryItem">
-              <span>Subtotal</span>
-              <div className="">*Subtotal Amount*</div>
-            </div>
-            <div className="summaryItem">
-              <span>Estimated Shipping</span>
-              <div className="">*Fixed amount?</div>
-            </div>
-            <div className="summaryItem">
-              <span>Discounts? Promos?</span>
-              <div className="">$ -.01</div>
-            </div>
-            <div className="summaryItem">
-              <span>Total</span>
-              <div className="">$1,000,000.00 please pay us</div>
-            </div>
-            <button className="checkoutBtn">CHECKOUT NOW</button>
-          </div>
+    <div className="Cart">
+      <h1>Products</h1>
+      {products.map((products, index) => (
+        <div className="product" key={index}>
+          <h3>{products.prodName}</h3>
+          <img src={products.img} alt={products.prodName}/>
+          <h4>{products.price}</h4>
+          <h4>{products.quantity}</h4>
+          <button>Add to Cart</button>
         </div>
-      </div>
+      ))}
     </div>
+    // <div>
+    //   <div className="cartWrapper">
+    //     <h1>Your Cart</h1>
+    //     <div className="cartContainer">
+    //       <div className="infoContainer">
+    //         {cart.map((product) => (
+    //         <div className="productContainer">
+    //           <div className="detailContainer">
+    //             <img src={product.img} alt="products listed by id"/>
+    //             <div className="details">
+    //               <div className="productName"><b>Product: </b>{product.prodName}</div>
+    //               <div className="productId">{product.id}</div>
+    //             </div>
+    //           </div>
+    //           <div className="priceDetails">
+    //             <div className="productAmtContainer">
+    //               <Add />
+    //               <div className="productAmt">{product.quantity}</div>
+    //               <Remove />
+    //             </div>
+    //             <div className="productPrice">
+    //               $ {product.price * product.quantity}
+    //             </div>
+    //           </div>
+    //         </div>
+    //         ))}
+    //       </div>
+    //       <div className="summaryContainer">
+    //         <h1>Order Summary</h1>
+    //         <div className="summaryItem">
+    //           <span>Subtotal</span>
+    //           <div className="">*Subtotal Amount*</div>
+    //         </div>
+    //         <div className="summaryItem">
+    //           <span>Estimated Shipping</span>
+    //           <div className="">*Fixed amount?</div>
+    //         </div>
+    //         <div className="summaryItem">
+    //           <span>Discounts? Promos?</span>
+    //           <div className="">$ -.01</div>
+    //         </div>
+    //         <div className="summaryItem">
+    //           <span>Total</span>
+    //           <div className="">$1,000,000.00 please pay us</div>
+    //         </div>
+    //         <button className="checkoutBtn">CHECKOUT NOW</button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
