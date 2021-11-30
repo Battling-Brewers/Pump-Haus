@@ -40,7 +40,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     tags: async (parent, args) => {
-      return await Tag.find();
+      return await Tag.find({});
     },
     tag: async (parent, { _id }) => {
       return await Tag.findOne({ _id: _id });

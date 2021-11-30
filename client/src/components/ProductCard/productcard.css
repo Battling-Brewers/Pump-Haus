@@ -27,6 +27,12 @@ img {
     z-index: 2;
 }
 
+.prod-title {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    filter: drop-shadow(2px 2px 2px #000000)
+}
+
 .img1 {
     display: inline;
 }
@@ -50,13 +56,14 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.35);
     z-index: 3;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 1.5s ease;
+    justify-content: end;
+    transition: all .65s ease;
     cursor: pointer;
+    flex-direction: column;
 }
 
 .icon {
@@ -68,11 +75,15 @@ img {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    transition: all 1.5s ease;
+    transition: all 1s ease;
 }
 
 .icon :hover {
     background-color: #e9f5f5;
     transform: scale(1.1);
 
+}
+
+.iconz {
+    display: flex;
 }
