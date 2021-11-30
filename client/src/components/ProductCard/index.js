@@ -10,7 +10,7 @@ import { useStoreContext } from "../../Utils/GlobalState";
 
 
 const ProductCard = ({ item }) => {
-        // const [state, dispatch] = useStoreContext()
+    // const [state, dispatch] = useStoreContext()
     // const { cart } = state
     // const addToCart = () => {
     //       dispatch({
@@ -42,7 +42,7 @@ const ProductCard = ({ item }) => {
         <h4 className="prod-title">{item.prodName}</h4>
         <h6 className="prod-title">{price}</h6>
         <div className="iconz">
-          <ShoppingCartOutlined className="icon" />
+          <ShoppingCartOutlined onClick={console.log("kill me now")} className="icon" />
           <SearchOutlined className="icon" />
           <FavoriteBorderOutlined className="icon" />
         </div>
