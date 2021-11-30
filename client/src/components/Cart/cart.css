@@ -59,7 +59,7 @@
 
 .summaryContainer {
     flex: 1;
-    border: 0.5px solid lightgray;
+    border: 2px solid black;
     border-radius: 10px;
     padding: 20px;
     height: 50vh;
@@ -74,7 +74,23 @@
 .checkoutBtn {
     width: 100%;
     padding: 10px;
-    background-color: black;
+    background-color: teal;
     color: white;
     font-weight: 600;
+}
+
+.cartTitle {
+    margin-left: 150px;
+}
+
+.orderTitle {
+    text-align: center;
+}
+
+.shippingStatement {
+    font-size: 2em;
+}
+
+.shippingStatement span {
+    color: red;
 }

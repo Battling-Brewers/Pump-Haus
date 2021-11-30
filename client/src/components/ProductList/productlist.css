@@ -5,3 +5,13 @@
     justify-content: space-between;
 }
 
+.tag-btns {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 95px;
+}
+
+.tag-btns button {
+    margin: 5px;
+}

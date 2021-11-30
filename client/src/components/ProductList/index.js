@@ -5,9 +5,9 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS, QUERY_TAGS } from "../../Utils/queries";
 
 const ProductList = () => {
-  const [tag, setTag] = useState("all");
+  const [tagState, setTag] = useState("all");
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  const something = data?.tags || [];
+  const something = data?.products || [];
   if (!loading) {
     console.log("HEWWO OUO", something);
   }
@@ -26,22 +26,49 @@ const ProductList = () => {
     });
   }
 
-  // const produtsToRender = productsAll.filter((product), product.tag.tagName === "" )
+  const tagClickHandler = async (e) => {
+    let buttonValue = e.target.value
+    await setTag(buttonValue)
+    await console.log(tagState)
+    console.log(productsToRender())
+  } 
+
+  // const productsToRender = tagState === "all" ? productsAll : productsAll.filter((product) => product.tag._id === tagState)
+  const productsToRender = () => {
+    if (tagState === "all") {
+      return productsAll;
+    } else {
+      // return productsAll.filter((product) => product.tags._id === tagState)
+      const renderProd = [];
+      console.log(productsAll);
+      for (let i = 0; i < productsAll.length; i++) {
+        for (let j = 0; j < productsAll[i].tags.length; j++) {
+          if (tagState === productsAll[i].tags[j]._id) {
+            renderProd.push(productsAll[i]);
+
+          }
+        }
+      }
+      console.log(renderProd)
+      return renderProd;
+    }
+  }
+
 
   return (
     <div>
       <div className="tag-btns">
-          <button>
-            <h6>All Products</h6>
+          <button value="all" onClick={tagClickHandler}>
+            All Products
           </button>
         {tagArr.map((tag) => (
-          <button>
-            <h6>{tag.tagName}</h6>
+          <button value={tag._id} onClick={tagClickHandler}>
+            {tag.tagName}
           </button>
         ))}
       </div>
       <div className="productContainer">
-        {productsAll.map((item) => (
+        {productsToRender().map((item) => (
           <ProductCard item={item} key={item._id} />
         ))}
       </div>
