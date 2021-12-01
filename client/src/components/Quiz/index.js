@@ -12,11 +12,11 @@ const Quiz = () => {
 
 			setCurrentQuestion(nextQuestion);
 		} else {
-			console.log(choices)
+
 		}
     }
     // const data = questions.map( (d) => d)
-    console.log(questions)
+
     return (
         <div className="quiz-content">
             <div className="quiz">

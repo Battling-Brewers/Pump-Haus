@@ -19,15 +19,8 @@ const SingleProduct = (item) => {
   const prodImage = data?.product.prodImage; //this also works
   const prodName = data?.product.prodName; //this will  probably work
   const prodDescrip = data?.product.prodDescrip;
-  const _id = data?.product._id;
-  const quantity = data?.product.quantity;
-  const productInCart = {
-    price: price,
-    prodImage: prodImage,
-    prodName: prodName,
-    id: _id,
-  };
-  const { cart } = state;
+
+
 
   const slideImages = [];
   for (let i = 0; i < prodImage?.length; i++) {
@@ -39,12 +32,11 @@ const SingleProduct = (item) => {
   }
 
   const addToCart = () => {
-    console.log(data?.product);
     dispatch({
       type: ADD_TO_CART,
       product: { ...data?.product, purchaseQuantity: 1 },
     });
-    console.log(cart);
+
   };
 
   return (

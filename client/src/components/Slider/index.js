@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import './index.css';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
-import { NavItem, Navbar, Icon} from "react-materialize";
-import { Link } from "react-router-dom";
 
 const Slider = () => {
     const [slideindex, setSlideIndex] = useState(0);

@@ -5,8 +5,7 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
-import { useParams, Link } from "react-router-dom";
-import SingleProduct from "../SingleProduct";
+import {  Link } from "react-router-dom";
 import { ADD_TO_CART } from "../../Utils/actions";
 import { useStoreContext } from "../../Utils/GlobalState";
 

@@ -1,10 +1,10 @@
-import { Add, ConstructionOutlined, Remove } from "@mui/icons-material";
+import { Add, Remove } from "@mui/icons-material";
 import React, {useEffect} from "react";
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../Utils/queries';
 import { useStoreContext } from '../../Utils/GlobalState';
-import { REMOVE_FROM_CART, CLEAR_CART } from "../../Utils/actions";
+import { REMOVE_FROM_CART} from "../../Utils/actions";
 import "./cart.css";
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -40,14 +40,11 @@ function calculateTotal() {
 
 function submitCheckout() {
   const productIds = [];
-  console.log(cart);
   state.cart.forEach((item) => {
     for (let i = 0; i < item.purchaseQuantity; i++) {
-      console.log(item._id);
       productIds.push(item._id);
     }
   });
-  console.log(productIds)
   getCheckout({
     variables: { products: productIds },
   });
