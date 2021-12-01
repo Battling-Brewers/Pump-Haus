@@ -3,3 +3,8 @@
     align-items: center;
     margin-top: 100px;
 }
+
+.arnoldPic {
+    width: 500px;
+    position: relative; top: 100px;
+}
