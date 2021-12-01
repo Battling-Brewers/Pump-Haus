@@ -80,12 +80,30 @@
     font-weight: 600;
 }
 
+.checkoutBtn:hover {
+    background-color: cyan;
+    color: black;
+    transition-duration: .5s;
+}
+
 .cartTitle {
-    margin-left: 150px;
+    margin-left: 120px;
+    background-color: orange;
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .orderTitle {
     text-align: center;
+    margin-left: 80px;
+    margin-right: 90px;
+    background-color: orange;
+    padding: 10px 20px 10px 20px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .shippingStatement {

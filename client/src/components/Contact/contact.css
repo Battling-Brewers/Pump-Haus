@@ -29,3 +29,12 @@
    .contact-container {
        margin-top:75px;
    }
+
+   .center-align {
+    margin-left:150px;
+    background-color: #e65100;
+    padding: 10px 20px 10px 20px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+   }
