@@ -31,7 +31,7 @@
     width: 60%;
     border: none;
     padding: 15px 20px;
-    background-color: rgb(5, 168, 168);
+    background-color: #e65100;
     color: white;
     cursor: pointer;
     margin-bottom: 10px;
@@ -40,8 +40,8 @@
 }
 
 .loginBtn:hover {
-    opacity: 70%;
-    color: black;
+    color: white;
+    background-color: rgb(59, 59, 59);
 }
 
 .loginLink {

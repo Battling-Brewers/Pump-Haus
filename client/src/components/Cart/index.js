@@ -35,7 +35,7 @@ function calculateTotal() {
   state.cart.forEach((item) => {
     sum += item.price;
   });
-  return sum.toFixed(2);
+  return sum;
 }
 
 function submitCheckout() {
@@ -52,7 +52,14 @@ function submitCheckout() {
 
 
   const shippingCost = calculateTotal() > 100 ? 0 : 10;
-
+  const tax = (calculateTotal()*.08)
+  const finalTotalCalc = shippingCost + tax + calculateTotal()
+  const finalTotal = finalTotalCalc.toFixed(2)
+  console.log(typeof tax)
+  console.log(typeof shippingCost)
+  console.log(typeof finalTotalCalc)
+  console.log(typeof finalTotal)
+  console.log(calculateTotal())
 
   return (
     <div>
@@ -85,7 +92,8 @@ function submitCheckout() {
           <div className="summaryContainer">
             <h1 className="orderTitle">Your Order</h1>
             <div className="summaryItem">
-              <span>Subtotal: {}</span>
+              <span>Subtotal:</span>
+              <div>{calculateTotal().toFixed(2)}</div>
             </div>
             <div className="summaryItem">
               <span>Shipping: </span>
@@ -93,11 +101,11 @@ function submitCheckout() {
             </div>
             <div className="summaryItem">
               <span>Tax: </span>
-              <div>{}</div>
+              <div>{tax.toFixed(2)}</div>
             </div>
             <div className="summaryItem">
               <span>Total: </span>
-              <div>{calculateTotal()}</div>
+              <div>{finalTotal}</div>
             </div>
             <button onClick={submitCheckout} className="checkoutBtn">CHECKOUT</button>
           </div>

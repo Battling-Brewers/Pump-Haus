@@ -62,7 +62,7 @@ const Contact = () => {
                 <div className="col s12">
                   <p className="right-align">
                     <button
-                      class="btn btn-large waves-effect waves-light"
+                      class="btn btn-large waves-effect waves-light contact-btn"
                       type="button"
                       name="action"
                       onClick={submitEmailForm}
