@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Select, Icon, TextInput } from "react-materialize";
+import React from "react";
+import { Select, TextInput } from "react-materialize";
 import "./bmi.css"
 const Bmi = () => {
   return (

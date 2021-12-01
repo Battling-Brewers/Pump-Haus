@@ -4,7 +4,7 @@
 .quiz-content{
     margin-top: 5vh;
     height: 80vh;
-    margin-left: 200px;
+    margin-left: 50px;
 }
 .quiz{
     display: flex;
@@ -26,4 +26,19 @@
     width: 200px;
     height: 100px;
     font-size: 20px;
+    background-color: #e65100;
+}
+
+.button:hover {
+    background-color: rgb(59, 59, 59);
+    
+}
+
+.currentQuestion {
+    font-size: 2.75em;
+    background-color: #e65100;
+    padding: 20px 30px 20px 30px;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

@@ -108,7 +108,7 @@
 
 .sliderButton:hover {
     opacity: 50%;
-    background-color: cyan;
-    color: #e65100;
+    background-color: rgb(59, 59, 59);
+    color: white;
     transition: all .5s ease 0s;
 }

@@ -75,17 +75,22 @@
 .checkoutBtn {
     width: 100%;
     padding: 10px;
-    background-color: teal;
+    background-color: #e65100;
     color: white;
     font-weight: 600;
 }
 
 .checkoutBtn:hover {
-    background-color: cyan;
-    color: black;
+    background-color: (rgb 59, 59, 59);
+    color: white;
     transition-duration: .5s;
 }
 
+.checkoutBtn:focus{
+    background-color: (rgb 59, 59, 59);
+    color: white;
+    transition-duration: .5s;
+}
 .cartTitle {
     margin-left: 120px;
     background-color: orange;
@@ -97,11 +102,12 @@
 
 .orderTitle {
     text-align: center;
-    margin-left: 80px;
-    margin-right: 90px;
+    display: flex;
+    position: relative;
+    margin-left: 200px;
     background-color: orange;
     padding: 10px 20px 10px 20px;
-    width: 400px;
+    width: 330px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px black;
 }
