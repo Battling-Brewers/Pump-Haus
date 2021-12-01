@@ -2,10 +2,12 @@
 
 ## Description
 
+Pump-Haus is a site built for those who have a fitness goal in mind, but don’t know which supplements to buy in order to achieve those goals.
+Our line of products is meant stand out from the crowd of mainstream, humdrum products that people are used to.
+
 ### Screenshot of Application
 
 ![2021-11-30-21-46-pump-haus herokuapp com](https://user-images.githubusercontent.com/62318347/144162831-dfc18540-0826-4e37-aaad-ae811d0d09dd.png)
-
 
 ## Table of Contents
 
