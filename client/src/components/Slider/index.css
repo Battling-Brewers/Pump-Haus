@@ -106,7 +106,7 @@
     transition: all .5s ease;
 }
 
-.sliderButton:hover {
+#darryl:hover {
     opacity: 50%;
     background-color: rgb(59, 59, 59);
     color: white;
