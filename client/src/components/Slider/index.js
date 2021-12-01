@@ -53,7 +53,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>YOU FEELIN THE BURN?</h1>
                         <p>PLS BUY LOTS OF OUR PRODUCTS</p>
-                        <button className="sliderButton">TOUCH ME NOW</button>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button className="sliderButton" id="darryl">TOUCH ME NOW</button></a>
                     </div>
                 </div>
                 <div className="slide">
@@ -63,7 +63,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>I'LL BE BACK</h1>
                         <p>DON'T MISS OUT ON OUR END OF YEAR SALE</p>
-                        <button className="sliderButton">FEEL MY MUSCLES</button>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=TIfAkOBMf5A"><button className="sliderButton" id="darryl">FEEL MY MUSCLES</button></a>
                     </div>
                 </div>
                 <div className="slide">
@@ -73,7 +73,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>HASTA LA VISTA BABY</h1>
                         <p>DONT YOU KNOW ABOUT THE WORD</p>
-                        <button className="sliderButton">COME WITH ME</button>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=pXOGS9cilKM"><button className="sliderButton" id="darryl">COME WITH ME</button></a>
                     </div>
                 </div>
                 <div className="slide">
@@ -83,7 +83,7 @@ const Slider = () => {
                     <div className="infoContainer">
                         <h1>HEYO DADDY-O</h1>
                         <p>DON'T FORGET TO SUBSCRIBE TO OUR NEWSLETTER</p>
-                        <button className="sliderButton">IF YOU WANT TO LIVE</button>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=HasaQvHCv4w"><button className="sliderButton" id="darryl">IF YOU WANT TO LIVE</button></a>
                     </div>
                 </div>
             </div>
