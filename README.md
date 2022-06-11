@@ -34,7 +34,7 @@ When the user accesses the website, they are presented with a landing page that 
 
 ## Links
 
-Deployed Link: https://pump-haus-ecommerce.herokuapp.com/
+Deployed Link: https://pump-haus-ecommerce.herokuapp.com
 
 GitHub: https://github.com/Battling-Brewers/Pump-Haus
 
